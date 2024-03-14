@@ -47,7 +47,9 @@ export const Contacts: FC = () => {
 
               <div className="flex justify-center items-center gap-2">
                 <div className="w-full h-[0.5px] bg-black/50 dark:bg-white/50" />
-                <p className="uppercase text-center text-black/50 dark:text-white/50">или</p>
+                <p className="uppercase text-center text-black/50 dark:text-white/50">
+                  или
+                </p>
                 <div className="w-full h-[0.5px] bg-black/50 dark:bg-white/50" />
               </div>
 
