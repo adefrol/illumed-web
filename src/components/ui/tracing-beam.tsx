@@ -36,7 +36,7 @@ export const TracingBeam = ({
   const y1 = useSpring(
     useTransform(
       scrollYProgress,
-      [0, screenHeight < 900 ? 0.66 : 0.2],
+      [0, screenHeight < 900 ? 0.66 : 0.25],
       [50, svgHeight]
     ),
     {
