@@ -37,9 +37,9 @@ const CustomLayout = ({ children, focus, setFocus }: IProps) => {
     <div className="">
       <PageTitle title="Резюме" />
 
-      <div className="lg:flex items-start lg:gap-[140px] mt-[50px] animate-slide-in ">
+      <div className="lg:flex items-start lg:gap-[140px] mt-[50px]">
         <div
-          className={cn("flex flex-col gap-[10px] max-[639px]:hidden", {
+          className={cn("flex flex-col gap-[10px] animate-slide-in max-[639px]:hidden", {
             "max-[639px]:w-[400px]": focus === "1",
           })}
         >
@@ -47,7 +47,7 @@ const CustomLayout = ({ children, focus, setFocus }: IProps) => {
             <li
               key={item.id}
               className={cn(
-                "uppercase font-bold max-[639px]:text-[12px] text-black/20 dark:text-white/20 cursor-pointer",
+                "uppercase font-bold max-[639px]:text-[12px] text-black/20 dark:text-white/20 cursor-pointer ",
                 {
                   "text-black dark:text-white transition duration-300":
                     focus === item.id.toString(),
@@ -60,7 +60,7 @@ const CustomLayout = ({ children, focus, setFocus }: IProps) => {
           ))}
         </div>
 
-        <ScrollArea className="w-96 whitespace-nowrap max-[639px]:visible lg:hidden">
+        <ScrollArea className="w-96 whitespace-nowrap max-[639px]:visible lg:hidden animate-slide-in">
           <div className="flex items-center w-max space-x-8 max-[639px]:mb-4">
             {sidebar.map((item) => (
               <li
@@ -81,7 +81,7 @@ const CustomLayout = ({ children, focus, setFocus }: IProps) => {
           <ScrollBar orientation="horizontal" style={{ opacity: 0 }} />
         </ScrollArea>
 
-        <div className="max-[639px]:mt-[20px] max-[639px]:flex max-[639px]:justify-center">
+        <div className="max-[639px]:mt-[20px] max-[639px]:flex max-[639px]:justify-center animate-slide-in">
           {children}
         </div>
       </div>

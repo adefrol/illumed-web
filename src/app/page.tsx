@@ -13,7 +13,7 @@ export default function Home() {
           приложений.
         </p>
 
-        <p className="max-w-[600px] font-light text-[16px] text-justify animate-slide-in">
+        <p className="max-w-[600px] font-light text-[16px] text-justify animate-slide-in z-10">
           {/* {user?.resume.map((resume) => resume.body)} */}
           illumed<span className='text-[#7266e2]'>Web</span> - команда, специализирующаяся на создании
           инновационных веб-сайтов и мобильных приложений. Мы опытные

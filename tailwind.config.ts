@@ -1,8 +1,8 @@
-import type { Config } from "tailwindcss";
+import type { Config } from "tailwindcss"
 
 const {
   default: flattenColorPalette,
-} = require("tailwindcss/lib/util/flattenColorPalette");
+} = require("tailwindcss/lib/util/flattenColorPalette")
 
 const config = {
   darkMode: ["class"],
@@ -73,29 +73,41 @@ const config = {
         },
         "slide-in": {
           '0%': { transform: 'translateY(-150px)', opacity: '0', scale: '0.8' },
-          '50%' : {opacity: '0'},
+          '30%': { opacity: '0' },
           '100%': { transform: 'translateX(0px)' },
+        },
+        "bg-infinite": {
+          '0%': {
+            filter: 'hue-rotate(0deg) contrast(100%)',
+          },
+          '50%': {
+            filter: 'hue-rotate(10deg) contrast(130%)',
+          },
+          '100%': {
+            filter: 'hue-rotate(0deg) contrast(100%)',
+          }
         }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "slide-in" : "slide-in 1s ease-in-out",
+        "slide-in": "slide-in 0.9s ease-in-out",
+        "bg-infinite" : "bg-infinite 10s linear infinite"
       },
     },
   },
   plugins: [require("tailwindcss-animate"), addVariablesForColors],
-} satisfies Config;
+} satisfies Config
 
 function addVariablesForColors({ addBase, theme }: any) {
-  let allColors = flattenColorPalette(theme("colors"));
+  let allColors = flattenColorPalette(theme("colors"))
   let newVars = Object.fromEntries(
     Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
-  );
+  )
 
   addBase({
     ":root": newVars,
-  });
+  })
 }
 
-export default config;
+export default config
