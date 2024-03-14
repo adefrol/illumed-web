@@ -49,8 +49,7 @@ const Page: NextPage<Props> = ({}) => {
                     <div className="flex justify-between items-center mt-20">
                       <CardItem
                         translateZ={20}
-                        as={Link}
-                        href="https://twitter.com/mannupaaji"
+                        as={'p'}
                         target="__blank"
                         className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
                       >
@@ -58,10 +57,11 @@ const Page: NextPage<Props> = ({}) => {
                       </CardItem>
                       <CardItem
                         translateZ={20}
-                        as="button"
+                        as={Link}
                         className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
+                        href={`/projects/${project.id}`}
                       >
-                        <Link href={`/projects/${project.id}`}>Подробнее</Link>
+                        Подробнее
                       </CardItem>
                     </div>
                   </CardBody>
