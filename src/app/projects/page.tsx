@@ -20,8 +20,8 @@ const Page: NextPage<Props> = ({}) => {
               {projects.map((project) => (
                 <CardContainer className="inter-var">
                   <CardBody
-                    className="bg-gray-50 backdrop-blur-md bg-opacity-10 relative group/card  dark:hover:shadow-2xl 
-                  dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:backdrop-blur-md dark:bg-opacity-25 dark:border-white/[0.2] border-black/[0.1] 
+                    className="bg-gray-50 relative group/card  dark:hover:shadow-2xl 
+                  dark:hover:shadow-emerald-500/[0.1] dark:bg-gradient-to-tr dark:from-black dark:via-[#85687c] dark:to-[#373063] dark:border-white/[0.2] border-black/[0.1] 
                   w-auto sm:w-[30rem] h-auto rounded-xl p-6 border"
                   >
                     <CardItem
@@ -49,7 +49,7 @@ const Page: NextPage<Props> = ({}) => {
                     <div className="flex justify-between items-center mt-20">
                       <CardItem
                         translateZ={20}
-                        as={'p'}
+                        as={"p"}
                         target="__blank"
                         className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
                       >
