@@ -69,7 +69,7 @@ const CustomLayout = ({ children, focus, setFocus }: IProps) => {
                   "uppercase font-bold max-[639px]:text-[16px] text-black/20 dark:text-white/20 cursor-pointer",
                   {
                     "text-black dark:text-white transition duration-300":
-                      focus === item.id,
+                      focus === item.id.toString(),
                   }
                 )}
                 onClick={() => setFocus(item.id)}

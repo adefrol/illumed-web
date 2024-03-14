@@ -9,6 +9,8 @@ import {
 } from "framer-motion";
 import { cn } from "@/lib/utils";
 
+const screenHeight = window.innerWidth;
+
 export const TracingBeam = ({
   children,
   className,
@@ -32,7 +34,11 @@ export const TracingBeam = ({
   }, []);
 
   const y1 = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [50, svgHeight]),
+    useTransform(
+      scrollYProgress,
+      [0, screenHeight < 900 ? 0.66 : 0.2],
+      [50, svgHeight]
+    ),
     {
       stiffness: 500,
       damping: 90,
@@ -71,10 +77,8 @@ export const TracingBeam = ({
               delay: 0.5,
             }}
             animate={{
-              backgroundColor:
-                scrollYProgress.get() > 0 ? "white" : "#7266e2",
-              borderColor:
-                scrollYProgress.get() > 0 ? "white" : "#7266e2",
+              backgroundColor: scrollYProgress.get() > 0 ? "white" : "#7266e2",
+              borderColor: scrollYProgress.get() > 0 ? "white" : "#7266e2",
             }}
             className="h-2 w-2  rounded-full border border-neutral-300 bg-white"
           />
