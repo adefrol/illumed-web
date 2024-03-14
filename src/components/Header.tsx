@@ -17,10 +17,9 @@ import {
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
 import { parseAsStringEnum, useQueryState } from "nuqs";
-import { Varela_Round } from 'next/font/google'
+import { Varela_Round } from "next/font/google";
 
-
-const varela = Varela_Round({weight : '400', subsets : ['latin']},);
+const varela = Varela_Round({ weight: "400", subsets: ["latin"] });
 
 interface INavbar {
   id: number;
@@ -73,7 +72,9 @@ export const Header: FC = () => {
       <div className="flex items-center gap-[30px] h-[75px] max-[639px]:gap-[50px]">
         {logo ? (
           <div className="">
-            <p className={`text-3xl select-none ${varela.className}`}>illumed<span className='text-[#7266e2]'>Web</span></p>
+            <p className={`text-3xl select-none ${varela.className}`}>
+              illumed<span className="text-[#7266e2]">Web</span>
+            </p>
           </div>
         ) : (
           <>
@@ -103,7 +104,7 @@ export const Header: FC = () => {
       <div
         className="bg-white dark:bg-black py-[10px] px-[20px] rounded-full w-fit flex gap-[40px] items-center 
       shadow-[#7266e26a] max-[639px]:shadow-[#efdae6] shadow-xl dark:shadow-[#7266e233] max-[639px]:dark:shadow-[#efdae633]
-      dark:backdrop-blur-md dark:bg-opacity-25 backdrop-blur-md bg-opacity-10 border border-black/[0.1]"
+      dark:backdrop-blur-md dark:bg-opacity-25 backdrop-blur-md bg-opacity-10 border border-black/[0.1] dark:border-white/[0.2]"
       >
         {navbar.map((navItem) => (
           <div
@@ -130,7 +131,6 @@ export const Header: FC = () => {
             <Button variant="outline" size="icon">
               <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
               <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-              <span className="sr-only">Toggle theme</span>
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">

@@ -6,7 +6,7 @@ export const Experience: FC<{ user: IUser }> = ({ user }) => {
   return (
     <TracingBeam>
       {user?.resume.map((item) => (
-        <div key={item.id} className="flex flex-col gap-[60px]">
+        <div key={item.id} className="flex flex-col gap-[60px] max-[639px]:ml-10">
           {item.experience.map((exp) => (
             <div key={exp.id} className="space-y-[5px]">
               <p className="text-black/50 dark:text-white/50 font-semibold">
