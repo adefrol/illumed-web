@@ -9,13 +9,13 @@ export default function Home() {
 
         <p className="max-w-[600px] font-semibold text-[24px]">
           {/* {user?.resume.map((item) => item.title)} */}
-          Illumed - команда экспертов в разработке сайтов и мобильных
+          illumed<span className='text-[#7266e2]'>Web</span> - команда экспертов в разработке сайтов и мобильных
           приложений.
         </p>
 
         <p className="max-w-[600px] font-light text-[16px] text-justify">
           {/* {user?.resume.map((resume) => resume.body)} */}
-          <b>Iillumed</b> - команда, специализирующаяся на создании
+          illumed<span className='text-[#7266e2]'>Web</span> - команда, специализирующаяся на создании
           инновационных веб-сайтов и мобильных приложений. Мы опытные
           веб-разработчики, обладают устойчивыми знаниями и более чем
           четырёхлетним практическим опытом. Владеем глубокими знаниями в

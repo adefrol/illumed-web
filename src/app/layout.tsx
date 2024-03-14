@@ -21,7 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className}`}>
         <Providers>
-          <div className="py-[40px] bg-[url('/bgmain.png')] bg-cover min-h-screen dark:bg-[url('/bgmain-dark.jpg')]">
+          <div className="py-[40px] bg-[url('/bgmain.png')] transition-all bg-cover min-h-screen dark:bg-[url('/bgmain-dark.webp')]">
             <div className="max-w-[1100px] mx-auto">
               <Header />
               <div className="mt-[80px] max-[639px]:mx-[20px]">{children}</div>
