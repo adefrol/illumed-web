@@ -103,7 +103,7 @@ export const Header: FC = () => {
       <div
         className="bg-white dark:bg-black py-[10px] px-[20px] rounded-full w-fit flex gap-[40px] items-center 
       shadow-[#7266e26a] max-[639px]:shadow-[#efdae6] shadow-xl dark:shadow-[#7266e233] max-[639px]:dark:shadow-[#efdae633]
-      dark:backdrop-blur-md dark:bg-opacity-25 backdrop-blur-md bg-opacity-25"
+      dark:backdrop-blur-md dark:bg-opacity-25 backdrop-blur-md bg-opacity-10 border border-black/[0.1]"
       >
         {navbar.map((navItem) => (
           <div
