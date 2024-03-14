@@ -20,7 +20,7 @@ export const Contacts: FC = () => {
       <Drawer>
         <DrawerTrigger asChild>
           <Button
-            className="rounded-full flex gap-[10px] items-center"
+            className="rounded-full flex gap-[10px] items-center "
             size={"lg"}
           >
             Связаться с нами <MoveUpRight size={15} />
@@ -29,7 +29,7 @@ export const Contacts: FC = () => {
 
         <DrawerContent
           //   style={{ backgroundImage: `url(${IMAGE_URL.bg})` }}
-          className="py-[40px] bg-cover bg-[url('/bgmain.png')] dark:bg-[url('/bgmain-dark.png')]"
+          className="py-[40px] bg-cover bg-[url('/bgmain.png')] dark:bg-[url('')]"
         >
           <div className="mx-auto w-full max-w-sm">
             <DrawerHeader className="mt-[10px]">
