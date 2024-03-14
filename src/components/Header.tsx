@@ -17,6 +17,10 @@ import {
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
 import { parseAsStringEnum, useQueryState } from "nuqs";
+import { Varela_Round } from 'next/font/google'
+
+
+const varela = Varela_Round({weight : '400', subsets : ['latin']},);
 
 interface INavbar {
   id: number;
@@ -66,10 +70,10 @@ export const Header: FC = () => {
 
   return (
     <div className="flex items-center justify-between max-[639px]:flex-col max-[639px]:gap-[30px]">
-      <div className="flex items-center gap-[30px] max-[639px]:gap-[50px]">
+      <div className="flex items-center gap-[30px] h-[75px] max-[639px]:gap-[50px]">
         {logo ? (
           <div className="">
-            <p className="text-3xl">LOGO</p>
+            <p className={`text-3xl select-none ${varela.className}`}>illumed<span className='text-[#7266e2]'>Web</span></p>
           </div>
         ) : (
           <>
