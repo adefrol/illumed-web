@@ -7,13 +7,13 @@ export default function Home() {
       <div className="flex flex-col gap-[20px]">
         <PageTitle title="Главная" />
 
-        <p className="max-w-[600px] font-semibold text-[24px]">
+        <p className="max-w-[600px] font-semibold text-[24px] animate-slide-in">
           {/* {user?.resume.map((item) => item.title)} */}
           illumed<span className='text-[#7266e2]'>Web</span> - команда экспертов в разработке сайтов и мобильных
           приложений.
         </p>
 
-        <p className="max-w-[600px] font-light text-[16px] text-justify">
+        <p className="max-w-[600px] font-light text-[16px] text-justify animate-slide-in">
           {/* {user?.resume.map((resume) => resume.body)} */}
           illumed<span className='text-[#7266e2]'>Web</span> - команда, специализирующаяся на создании
           инновационных веб-сайтов и мобильных приложений. Мы опытные
@@ -29,7 +29,7 @@ export default function Home() {
           вкладом в наши инновационные проекты." */}
         </p>
 
-        <div className="">
+        <div className="animate-slide-in">
           <Contacts />
         </div>
       </div>

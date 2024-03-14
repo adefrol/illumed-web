@@ -16,7 +16,7 @@ const Page: NextPage<Props> = ({}) => {
       <div className="mt-[50px]">
         <div className="">
           {projects.length ? (
-            <div className="flex flex-wrap lg:gap-[60px] max-[639px]:flex max-[639px]:flex-col max-[639px]:gap-[40px]">
+            <div className="flex flex-wrap lg:gap-[60px] max-[639px]:flex max-[639px]:flex-col max-[639px]:gap-[40px] animate-slide-in">
               {projects.map((project) => (
                 <CardContainer className="inter-var">
                   <CardBody

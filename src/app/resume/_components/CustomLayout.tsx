@@ -37,7 +37,7 @@ const CustomLayout = ({ children, focus, setFocus }: IProps) => {
     <div className="">
       <PageTitle title="Резюме" />
 
-      <div className="lg:flex items-start lg:gap-[140px] mt-[50px] ">
+      <div className="lg:flex items-start lg:gap-[140px] mt-[50px] animate-slide-in ">
         <div
           className={cn("flex flex-col gap-[10px] max-[639px]:hidden", {
             "max-[639px]:w-[400px]": focus === "1",
