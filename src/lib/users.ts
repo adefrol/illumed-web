@@ -7,7 +7,7 @@ export const users: IUser[] = [
     lastname: "Найдёнов",
     patronymic: "Сергеевич",
     position: "Frontend Разработчик",
-    img: "https://github.com/3N.png",
+    img: "/sasha.jpeg",
 
     resume: [
       {
@@ -151,8 +151,8 @@ export const users: IUser[] = [
     lastname: "Курбатов",
     patronymic: "Викторович",
     position: "Backend Разработчик",
-    img: '/ivan.jpg',
-    
+    img: "/ivan.jpg",
+
     resume: [
       {
         id: 1,
