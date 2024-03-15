@@ -41,7 +41,7 @@ export const Header: FC = () => {
 
   return (
     <div className="flex items-center mt-[30px] justify-between max-[639px]:flex-col max-[639px]:gap-[30px]">
-      <div className="flex items-center h-[75px] max-[639px]:gap-[50px]">
+      <div className="flex items-center h-[75px] w-[170px] max-[639px]:gap-[50px]">
         {logo ? (
           <div className="">
             <p className={`text-3xl select-none ${varela.className}`}>
