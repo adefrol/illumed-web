@@ -16,9 +16,9 @@ const Page: NextPage<Props> = ({}) => {
       <div className="mt-[50px]">
         <div className="">
           {projects.length ? (
-            <div className="flex flex-wrap lg:gap-[60px] max-[639px]:flex max-[639px]:flex-col max-[639px]:gap-[40px] animate-slide-in">
+            <div className="grid grid-cols-2 lg:gap-[60px] max-[639px]:flex max-[639px]:flex-col max-[639px]:gap-[40px] animate-slide-in">
               {projects.map((project) => (
-                <CardContainer className="inter-var">
+                <CardContainer className="inter-var ">
                   <CardBody
                     className="bg-opacity-5 backdrop-blur-md relative group/card  dark:hover:shadow-2xl 
                   dark:hover:shadow-emerald-500/[0.1] dark:backdrop-blur-md dark:bg-opacity-5 dark:border-white/[0.2] border-black/[0.1] 

@@ -82,6 +82,10 @@ body::-webkit-scrollbar {
   }
 }
 
+html {
+  @apply selection:bg-[#7266e2a5];
+}
+
 @layer base {
   * {
     @apply border-border;

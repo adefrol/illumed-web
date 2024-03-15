@@ -81,7 +81,7 @@ const config = {
             filter: "hue-rotate(0deg) contrast(100%)",
           },
           "50%": {
-            filter: "hue-rotate(10deg) contrast(130%)",
+            filter: "hue-rotate(15deg) contrast(130%)",
           },
           "100%": {
             filter: "hue-rotate(0deg) contrast(100%)",
