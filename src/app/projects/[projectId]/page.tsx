@@ -1,27 +1,13 @@
-import { PageTitle } from "@/components/PageTitle";
-import { projects } from "@/lib/projects";
+import { ProjectIdPage } from "@/pageComponents/projects/project-id-page";
 import { NextPage } from "next";
-import { Suspense } from "react";
 
-interface IProps {
-  params: {
-    projectId: string;
-  };
-}
+interface Props {}
 
-const Page: NextPage<IProps> = ({ params }) => {
-  const projectById = projects.find(
-    (project) => project.id.toString() === params.projectId
-  );
-
+const Page: NextPage<Props> = ({}) => {
   return (
-    <Suspense fallback={<>Loading...</>}>
-      <PageTitle title={params.projectId ? `Проект ${params.projectId}` : ""} />
-
-      <div className="mt-[50px]">
-        <img src={projectById?.img} alt="" />
-      </div>
-    </Suspense>
+    <div>
+      <ProjectIdPage />
+    </div>
   );
 };
 

@@ -3,9 +3,10 @@ import { IProject } from "@/interfaces/project.interface";
 export const projects: IProject[] = [
   {
     id: 1,
-    title: "Проект 1",
-    img: "https://img.freepik.com/free-photo/bright-petals-gift-love-in-a-bouquet-generated-by-ai_188544-13370.jpg?size=626&ext=jpg&ga=GA1.1.1292351815.1710028800&semt=ais",
-    dateTime: "2022-2023",
+    title: "Neverlose.cc",
+    img: "/projects/neverlose.jpg",
+    dateTime: "2020-2021",
+    link: "https://neverlose.cc",
   },
 
   {
