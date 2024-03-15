@@ -2,9 +2,8 @@ import { Header } from "@/components/Header";
 import { Toaster } from "@/components/ui/sonner";
 import { Providers } from "@/providers/Providers";
 import type { Metadata } from "next";
-import { Bebas_Neue, Comfortaa, Inter, M_PLUS_Rounded_1c, Roboto } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
-import { BackgroundGradientAnimation } from "@/components/ui/background-gradient-animation";
 
 const inter = Inter({ subsets: ["latin"]});
 
