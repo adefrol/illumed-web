@@ -12,7 +12,11 @@ const nextConfig = {
                 hostname: 'picsum.photos'
             }
         ],
-    }
+    },
+
+    experimental: {
+        missingSuspenseWithCSRBailout: false,
+    },
 };
 
 export default nextConfig;
