@@ -7,7 +7,8 @@ import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Varela_Round } from "next/font/google";
 import Link from "next/link";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
+import { useQueryState } from "nuqs";
 import { FC, useEffect, useState } from "react";
 import { AnimatedTooltip } from "./ui/animated-tooltip";
 import { Button } from "./ui/button";
@@ -17,39 +18,13 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
-import { useQueryState } from "nuqs";
+import { navbar } from "@/constants/navbar";
 
 const varela = Varela_Round({ weight: "400", subsets: ["latin"] });
 
-interface INavbar {
-  id: number;
-  title: string;
-  href: string;
-}
-
-const navbar: INavbar[] = [
-  {
-    id: 1,
-    title: "О нас",
-    href: "/",
-  },
-
-  {
-    id: 2,
-    title: "Проекты",
-    href: "/projects",
-  },
-
-  {
-    id: 3,
-    title: "Резюме",
-    href: "/resume",
-  },
-];
-
 export const Header: FC = () => {
   const pathname = usePathname();
-  const { switchUser, user: currentUser } = useSwitchUser();
+  const { switchUser } = useSwitchUser();
   const [focus, setFocus] = useState(pathname);
   const [logo, setLogo] = useState<boolean>(true);
   const { setTheme } = useTheme();
@@ -77,26 +52,6 @@ export const Header: FC = () => {
           </div>
         ) : (
           <>
-            {/* {users.map((user) => (
-              <div
-                key={user.id}
-                onClick={() => {
-                  switchUser(user.id);
-                }}
-                className={cn("flex flex-col items-center opacity-50", {
-                  "opacity-100 transition duration-300":
-                    user.id === currentUser?.id,
-                })}
-              >
-                <Avatar className="cursor-pointer w-[50px] h-[50px] max-[639px]:w-[60px] max-[639px]:h-[60px]">
-                  <AvatarImage src={user.img} />
-                  <AvatarFallback>{user.name}</AvatarFallback>
-                </Avatar>
-
-
-                <p className="">{user.name}</p>
-              </div>
-            ))} */}
             {users.map((user) => (
               <>
                 <AnimatedTooltip key={user.id} item={user} />
