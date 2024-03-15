@@ -3,7 +3,6 @@ import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import { FloatingNav } from "@/components/ui/floating-navbar";
 import { navbar } from "@/constants/navbar";
 import { projects } from "@/lib/projects";
-import { MoveUpRight } from "lucide-react";
 import { NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
