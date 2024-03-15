@@ -1,5 +1,7 @@
 import { PageTitle } from "@/components/PageTitle";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
+import { FloatingNav } from "@/components/ui/floating-navbar";
+import { navbar } from "@/constants/navbar";
 import { projects } from "@/lib/projects";
 import { MoveUpRight } from "lucide-react";
 import { NextPage } from "next";
@@ -14,6 +16,7 @@ const Page: NextPage<Props> = ({}) => {
       <PageTitle title="Проекты" />
 
       <div className="mt-[50px]">
+        <FloatingNav navItems={navbar} />
         <div className="">
           {projects.length ? (
             <div className="grid grid-cols-2 lg:gap-[60px] max-[639px]:flex max-[639px]:flex-col max-[639px]:gap-[40px] animate-slide-in">
@@ -78,6 +81,7 @@ const Page: NextPage<Props> = ({}) => {
               </p>
             </div>
           )}
+          NF
         </div>
       </div>
     </>
