@@ -25,7 +25,6 @@ const varela = Varela_Round({ weight: "400", subsets: ["latin"] });
 export const Header: FC = () => {
   const pathname = usePathname();
   const { switchUser } = useSwitchUser();
-  const [focus, setFocus] = useState(pathname);
   const [logo, setLogo] = useState<boolean>(true);
   const { setTheme } = useTheme();
   const [userParams] = useQueryState("user");
@@ -43,7 +42,7 @@ export const Header: FC = () => {
 
   return (
     <div className="flex items-center mt-[30px] justify-between max-[639px]:flex-col max-[639px]:gap-[30px]">
-      <div className="flex items-center gap-[30px] h-[75px] max-[639px]:gap-[50px]">
+      <div className="flex items-center h-[75px] max-[639px]:gap-[50px]">
         {logo ? (
           <div className="">
             <p className={`text-3xl select-none ${varela.className}`}>
@@ -62,16 +61,12 @@ export const Header: FC = () => {
       </div>
 
       <div
-        className="bg-white dark:bg-black py-[10px] px-[20px] rounded-full w-fit flex gap-[40px] items-center 
+        className="bg-white dark:bg-black py-[10px] px-[20px] rounded-full flex gap-[40px] items-center 
       shadow-[#7266e26a] max-[639px]:shadow-[#efdae6] shadow-xl dark:shadow-[#7266e233] max-[639px]:dark:shadow-[#efdae633]
       dark:backdrop-blur-md dark:bg-opacity-25 backdrop-blur-md bg-opacity-10 border border-black/[0.1] dark:border-white/[0.2]"
       >
         {navbar.map((navItem) => (
-          <div
-            key={navItem.id}
-            onClick={() => setFocus(navItem.href)}
-            className="cursor-pointer"
-          >
+          <div key={navItem.id} className="cursor-pointer">
             <Link
               href={{
                 pathname: navItem.href,
@@ -82,7 +77,7 @@ export const Header: FC = () => {
               }}
               className={cn("font-semibold text-black/30 dark:text-white/30", {
                 "text-black dark:text-white transition duration-300":
-                  focus === navItem.href,
+                  pathname === navItem.href,
               })}
             >
               {navItem.title}
@@ -114,9 +109,6 @@ export const Header: FC = () => {
             <DropdownMenuItem onClick={() => setTheme("dark")}>
               Темная
             </DropdownMenuItem>
-            {/* <DropdownMenuItem onClick={() => setTheme("system")}>
-              Системная
-            </DropdownMenuItem> */}
           </DropdownMenuContent>
         </DropdownMenu>
       </div>

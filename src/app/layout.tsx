@@ -34,9 +34,7 @@ export default function RootLayout({
           <div className="py-[40px] transition-all  min-h-screen ">
             <div className="max-w-[1100px] mx-auto">
               <Header />
-              <div className="mt-[80px] absolute max-[639px]:mx-[20px] ">
-                {children}
-              </div>
+              <div className="mt-[80px] max-[639px]:mx-[20px] ">{children}</div>
             </div>
           </div>
         </Providers>
