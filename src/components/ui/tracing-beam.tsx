@@ -9,6 +9,7 @@ import {
 } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { useTheme } from "next-themes";
+import { useSwitchUser } from "@/context/SwitchUserContext";
 
 const screenHeight = window.innerWidth;
 
@@ -27,12 +28,13 @@ export const TracingBeam = ({
 
   const contentRef = useRef<HTMLDivElement>(null);
   const [svgHeight, setSvgHeight] = useState(0);
+  const { user } = useSwitchUser();
 
   useEffect(() => {
     if (contentRef.current) {
       setSvgHeight(contentRef.current.offsetHeight);
     }
-  }, []);
+  }, [user]);
 
   const y1 = useSpring(
     useTransform(
