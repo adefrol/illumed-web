@@ -17,6 +17,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
+import { useQueryState } from "nuqs";
 
 const varela = Varela_Round({ weight: "400", subsets: ["latin"] });
 
@@ -48,15 +49,16 @@ const navbar: INavbar[] = [
 
 export const Header: FC = () => {
   const pathname = usePathname();
-  const { switchUser } = useSwitchUser();
+  const { switchUser, user: currentUser } = useSwitchUser();
   const [focus, setFocus] = useState(pathname);
   const [logo, setLogo] = useState<boolean>(true);
   const { setTheme } = useTheme();
-  const userParams = useSearchParams();
-  const getUserParams = userParams.get("user");
+  const [userParams] = useQueryState("user");
+  const [blogParams] = useQueryState("blog");
+  console.log(blogParams);
 
   useEffect(() => {
-    switchUser(Number(getUserParams));
+    switchUser(Number(userParams));
     if (pathname === "/resume") {
       setLogo(false);
     }
@@ -116,7 +118,13 @@ export const Header: FC = () => {
             className="cursor-pointer"
           >
             <Link
-              href={navItem.href}
+              href={{
+                pathname: navItem.href,
+                query: {
+                  user: userParams,
+                  blog: blogParams,
+                },
+              }}
               className={cn("font-semibold text-black/30 dark:text-white/30", {
                 "text-black dark:text-white transition duration-300":
                   focus === navItem.href,
