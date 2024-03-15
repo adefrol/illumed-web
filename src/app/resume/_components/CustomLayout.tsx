@@ -20,10 +20,10 @@ const sidebar = [
     title: "Технологии",
   },
 
-  {
-    id: 4,
-    title: "Контакты",
-  },
+  // {
+  //   id: 4,
+  //   title: "Контакты",
+  // },
 ];
 
 interface IProps {

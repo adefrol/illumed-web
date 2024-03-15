@@ -12,6 +12,4 @@ export interface IResume {
   education: IEducation[];
 
   development: IDevelopment[];
-
-  references: IReferences[];
 }

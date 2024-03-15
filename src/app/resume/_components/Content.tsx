@@ -18,7 +18,7 @@ enum Blogs {
   EXPERIENCE = "1",
   EDUCATION = "2",
   DEVELOPMENT = "3",
-  REFERENCES = "4",
+  // REFERENCES = "4",
 }
 
 export const Content: FC = () => {
@@ -44,10 +44,10 @@ export const Content: FC = () => {
       content: <Development user={user!} />,
     },
 
-    {
-      id: 4,
-      content: <References user={user!} />,
-    },
+    // {
+    //   id: 4,
+    //   content: <References user={user!} />,
+    // },
   ];
 
   return (

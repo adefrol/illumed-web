@@ -6,7 +6,7 @@ export const users: IUser[] = [
     name: "Александр",
     lastname: "Найдёнов",
     patronymic: "Сергеевич",
-    position: 'Frontend Разработчик',
+    position: "Frontend Разработчик",
     img: "https://github.com/3N.png",
 
     resume: [
@@ -121,8 +121,6 @@ export const users: IUser[] = [
             body: "Tanstack Router",
           },
         ],
-
-        references: [],
       },
     ],
 
@@ -152,7 +150,7 @@ export const users: IUser[] = [
     name: "Иван",
     lastname: "Курбатов",
     patronymic: "Викторович",
-    position: 'Backend Разработчик',
+    position: "Backend Разработчик",
     img: "https://picsum.photos/200",
 
     resume: [
@@ -223,8 +221,6 @@ export const users: IUser[] = [
             body: "Python Django",
           },
         ],
-
-        references: [],
       },
     ],
 
