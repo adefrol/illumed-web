@@ -39,8 +39,6 @@ export const AnimatedTooltip = ({ item }: IProps) => {
 
   const { user: currentUser, switchUser } = useSwitchUser();
 
-  console.log(focus);
-
   return (
     <>
       <div
