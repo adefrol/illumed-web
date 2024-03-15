@@ -17,7 +17,7 @@ export default function Home() {
           - команда экспертов в разработке сайтов и мобильных приложений.
         </p>
 
-        <p className="max-w-[600px] font-light text-[17px] text-justify animate-slide-in z-10">
+        <p className="max-w-[600px] font-normal text-[17px] text-justify animate-slide-in z-10">
           <span className={varela.className}>
             illumed<span className="text-[#7266e2]">Web</span>
           </span>{" "}
