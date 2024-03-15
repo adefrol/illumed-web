@@ -151,8 +151,8 @@ export const users: IUser[] = [
     lastname: "Курбатов",
     patronymic: "Викторович",
     position: "Backend Разработчик",
-    img: "https://picsum.photos/200",
-
+    img: '/ivan.jpg',
+    
     resume: [
       {
         id: 1,
