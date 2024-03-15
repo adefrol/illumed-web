@@ -81,7 +81,6 @@ const Page: NextPage<Props> = ({}) => {
               </p>
             </div>
           )}
-          NF
         </div>
       </div>
     </>
