@@ -1,5 +1,6 @@
 "use client";
 
+import { navbar } from "@/constants/navbar";
 import { useSwitchUser } from "@/context/SwitchUserContext";
 import { users } from "@/lib/users";
 import { cn } from "@/lib/utils";
@@ -18,7 +19,6 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
-import { navbar } from "@/constants/navbar";
 
 const varela = Varela_Round({ weight: "400", subsets: ["latin"] });
 
@@ -29,7 +29,6 @@ export const Header: FC = () => {
   const { setTheme } = useTheme();
   const [userParams] = useQueryState("user");
   const [blogParams] = useQueryState("blog");
-  console.log(blogParams);
 
   useEffect(() => {
     switchUser(Number(userParams));
