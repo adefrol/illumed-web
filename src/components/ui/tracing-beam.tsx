@@ -8,6 +8,7 @@ import {
   useSpring,
 } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { useTheme } from "next-themes";
 
 const screenHeight = window.innerWidth;
 
@@ -51,6 +52,8 @@ export const TracingBeam = ({
       damping: 90,
     }
   );
+
+  const { theme } = useTheme();
 
   return (
     <motion.div
@@ -118,10 +121,21 @@ export const TracingBeam = ({
               y1={y1} // set y1 for gradient
               y2={y2} // set y2 for gradient
             >
-              <stop stopColor="#eb8888" stopOpacity="0"></stop>
-              <stop stopColor="#eb8888"></stop>
-              <stop offset="0.325" stopColor="#6344F5"></stop>
-              <stop offset="1" stopColor="#AE48FF" stopOpacity="0"></stop>
+              {theme === "light" ? (
+                <>
+                  <stop stopColor="#c9a9e3" stopOpacity="0"></stop>
+                  <stop stopColor="#c9a9e3"></stop>
+                  <stop offset="0.325" stopColor="#f9c9d8"></stop>
+                  <stop offset="1" stopColor="#e4d3ff" stopOpacity="0"></stop>
+                </>
+              ) : (
+                <>
+                  <stop stopColor="#6344F5" stopOpacity="0"></stop>
+                  <stop stopColor="#6344F5"></stop>
+                  <stop offset="0.325" stopColor="#AE48FF"></stop>
+                  <stop offset="1" stopColor="#eb8888" stopOpacity="0"></stop>
+                </>
+              )}
             </motion.linearGradient>
           </defs>
         </svg>

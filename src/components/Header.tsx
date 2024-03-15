@@ -5,10 +5,11 @@ import { users } from "@/lib/users";
 import { cn } from "@/lib/utils";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
+import { Varela_Round } from "next/font/google";
 import Link from "next/link";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { FC, useEffect, useState } from "react";
-import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+import { AnimatedTooltip } from "./ui/animated-tooltip";
 import { Button } from "./ui/button";
 import {
   DropdownMenu,
@@ -16,10 +17,6 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
-import { parseAsStringEnum, useQueryState } from "nuqs";
-import { Varela_Round } from "next/font/google";
-import { AnimatedTooltip } from "./ui/animated-tooltip";
-import { BackgroundGradient } from "./ui/border-gradient";
 
 const varela = Varela_Round({ weight: "400", subsets: ["latin"] });
 
@@ -32,7 +29,7 @@ interface INavbar {
 const navbar: INavbar[] = [
   {
     id: 1,
-    title: "О себе",
+    title: "О нас",
     href: "/",
   },
 
@@ -130,14 +127,22 @@ export const Header: FC = () => {
 
       <div className="max-[639px]:hidden">
         <DropdownMenu>
-          <DropdownMenuTrigger asChild>
+          <DropdownMenuTrigger
+            className="bg-white bg-opacity-15 backdrop-blur-md hover:bg-opacity-30 transition duration-300 hover:bg-white 
+            dark:bg-black dark:bg-opacity-15 dark:backdrop-blur-md rounded-full p-2 dark:hover:bg-opacity-30
+            focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0"
+            asChild
+          >
             <Button variant="outline" size="icon">
-              <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+              <Sun className="h-[1.2rem]  w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
               <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            <DropdownMenuItem onClick={() => setTheme("light")}>
+          <DropdownMenuContent
+            className="bg-white backdrop-blur-md bg-opacity-15"
+            align="end"
+          >
+            <DropdownMenuItem className="" onClick={() => setTheme("light")}>
               Светлая
             </DropdownMenuItem>
             <DropdownMenuItem onClick={() => setTheme("dark")}>
