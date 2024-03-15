@@ -24,13 +24,17 @@ export const FloatingNav = ({ navItems, className }: IProps) => {
 
   const pathname = usePathname();
   const [blogParams] = useQueryState("blog");
+  const screenWidth = window.innerWidth;
 
   useMotionValueEvent(scrollYProgress, "change", (current) => {
     // Check if current is not undefined and is a number
     if (typeof current === "number") {
       let direction = current! - scrollYProgress.getPrevious()!;
 
-      if (scrollYProgress.get() < 0.2) {
+      if (
+        (screenWidth < 768 && scrollYProgress.get() < 0.12) ||
+        (screenWidth > 768 && scrollYProgress.get() < 0.2)
+      ) {
         setVisible(false);
       } else {
         if (direction < 0) {
