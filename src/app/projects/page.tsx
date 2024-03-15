@@ -20,8 +20,8 @@ const Page: NextPage<Props> = ({}) => {
               {projects.map((project) => (
                 <CardContainer className="inter-var">
                   <CardBody
-                    className="bg-gray-50 relative group/card  dark:hover:shadow-2xl 
-                  dark:hover:shadow-emerald-500/[0.1] dark:bg-gradient-to-tr dark:from-black dark:via-[#85687c] dark:to-[#373063] dark:border-white/[0.2] border-black/[0.1] 
+                    className="bg-opacity-5 backdrop-blur-md relative group/card  dark:hover:shadow-2xl 
+                  dark:hover:shadow-emerald-500/[0.1] dark:backdrop-blur-md dark:bg-opacity-5 dark:border-white/[0.2] border-black/[0.1] 
                   w-auto sm:w-[30rem] h-auto rounded-xl p-6 border"
                   >
                     <CardItem

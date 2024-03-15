@@ -2,11 +2,16 @@
 const nextConfig = {
     images: {
         remotePatterns: [{
-            // protocol: "https",
-            hostname: "img.freepik.com",
-            // port: "",
-            // pathname: "/u/**",
-        }, ],
+                hostname: "img.freepik.com",
+            },
+            {
+                hostname: 'github.com'
+            },
+
+            {
+                hostname: 'picsum.photos'
+            }
+        ],
     }
 };
 

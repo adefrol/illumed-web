@@ -18,6 +18,8 @@ import {
 } from "./ui/dropdown-menu";
 import { parseAsStringEnum, useQueryState } from "nuqs";
 import { Varela_Round } from "next/font/google";
+import { AnimatedTooltip } from "./ui/animated-tooltip";
+import { BackgroundGradient } from "./ui/border-gradient";
 
 const varela = Varela_Round({ weight: "400", subsets: ["latin"] });
 
@@ -47,11 +49,6 @@ const navbar: INavbar[] = [
   },
 ];
 
-enum Users {
-  Aleksandr = "1",
-  Ivan = "2",
-}
-
 export const Header: FC = () => {
   const pathname = usePathname();
   const { switchUser, user: currentUser } = useSwitchUser();
@@ -68,7 +65,7 @@ export const Header: FC = () => {
   }, [pathname]);
 
   return (
-    <div className="flex items-center justify-between max-[639px]:flex-col max-[639px]:gap-[30px]">
+    <div className="flex items-center mt-[30px] justify-between max-[639px]:flex-col max-[639px]:gap-[30px]">
       <div className="flex items-center gap-[30px] h-[75px] max-[639px]:gap-[50px]">
         {logo ? (
           <div className="">
@@ -78,7 +75,7 @@ export const Header: FC = () => {
           </div>
         ) : (
           <>
-            {users.map((user) => (
+            {/* {users.map((user) => (
               <div
                 key={user.id}
                 onClick={() => {
@@ -94,8 +91,14 @@ export const Header: FC = () => {
                   <AvatarFallback>{user.name}</AvatarFallback>
                 </Avatar>
 
+
                 <p className="">{user.name}</p>
               </div>
+            ))} */}
+            {users.map((user) => (
+              <>
+                <AnimatedTooltip key={user.id} item={user} />
+              </>
             ))}
           </>
         )}

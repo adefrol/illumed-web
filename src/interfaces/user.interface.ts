@@ -5,6 +5,7 @@ export interface IUser {
   id: number;
   name: string;
   lastname: string;
+  position: string;
   patronymic: string;
   img: string;
   resume: IResume[];

@@ -6,6 +6,7 @@ export const users: IUser[] = [
     name: "Александр",
     lastname: "Найдёнов",
     patronymic: "Сергеевич",
+    position: 'Frontend Разработчик',
     img: "https://github.com/3N.png",
 
     resume: [
@@ -151,6 +152,7 @@ export const users: IUser[] = [
     name: "Иван",
     lastname: "Курбатов",
     patronymic: "Викторович",
+    position: 'Backend Разработчик',
     img: "https://picsum.photos/200",
 
     resume: [
