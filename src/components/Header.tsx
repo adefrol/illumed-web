@@ -85,7 +85,7 @@ export const Header: FC = () => {
         ))}
       </div>
 
-      <div className="max-[639px]:hidden">
+      <div className="max-[639px]:hidden w-[170px] flex justify-end">
         <DropdownMenu>
           <DropdownMenuTrigger
             className="bg-white bg-opacity-15 backdrop-blur-md hover:bg-opacity-30 transition duration-300 hover:bg-white 
