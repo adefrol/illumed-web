@@ -7,7 +7,7 @@ import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Varela_Round } from "next/font/google";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import { FC, useEffect, useState } from "react";
 import { AnimatedTooltip } from "./ui/animated-tooltip";
 import { Button } from "./ui/button";
@@ -48,12 +48,15 @@ const navbar: INavbar[] = [
 
 export const Header: FC = () => {
   const pathname = usePathname();
-  const { switchUser, user: currentUser } = useSwitchUser();
+  const { switchUser } = useSwitchUser();
   const [focus, setFocus] = useState(pathname);
   const [logo, setLogo] = useState<boolean>(true);
   const { setTheme } = useTheme();
+  const userParams = useSearchParams();
+  const getUserParams = userParams.get("user");
 
   useEffect(() => {
+    switchUser(Number(getUserParams));
     if (pathname === "/resume") {
       setLogo(false);
     }
