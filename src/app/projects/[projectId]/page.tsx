@@ -1,6 +1,7 @@
 import { PageTitle } from "@/components/PageTitle";
 import { projects } from "@/lib/projects";
 import { NextPage } from "next";
+import { Suspense } from "react";
 
 interface IProps {
   params: {
@@ -14,13 +15,13 @@ const Page: NextPage<IProps> = ({ params }) => {
   );
 
   return (
-    <div className="">
+    <Suspense fallback={<>Loading...</>}>
       <PageTitle title={params.projectId ? `Проект ${params.projectId}` : ""} />
 
       <div className="mt-[50px]">
         <img src={projectById?.img} alt="" />
       </div>
-    </div>
+    </Suspense>
   );
 };
 
