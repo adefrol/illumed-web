@@ -3,7 +3,7 @@
 import { IUser } from "@/interfaces/user.interface";
 import { users } from "@/lib/users";
 import { parseAsStringEnum, useQueryState } from "nuqs";
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 export interface IUserState {
   user: IUser | null;
@@ -19,12 +19,31 @@ const defaultState = {
 
 const SwitchUserContext = createContext<IUserState>(defaultState);
 
+enum Users {
+  aleksandr = "1",
+  ivan = "2",
+}
+
 export const SwitchUserContextProvider = ({
   children,
 }: {
   children: React.ReactNode;
 }) => {
   const [user, setUser] = useState<IUserState>(defaultState);
+  const [userParams, setUserParams] = useQueryState(
+    "user",
+    parseAsStringEnum<Users>(Object.values(Users)).withDefault(Users.aleksandr)
+  );
+
+  useEffect(() => {
+    const newUser = users.find((user) => user.id === Number(userParams));
+    if (newUser) {
+      setUser({
+        user: newUser,
+        switchUser: switchUser,
+      });
+    }
+  }, [userParams]);
 
   const switchUser = (id: number) => {
     const newUser = users.find((user) => user.id === id);
@@ -33,6 +52,9 @@ export const SwitchUserContextProvider = ({
         user: newUser,
         switchUser: switchUser,
       });
+
+      // @ts-expect-error undefined types
+      setUserParams(newUser.id.toString());
     }
   };
 
