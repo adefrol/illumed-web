@@ -29,6 +29,7 @@ export const FormComponent: FC = () => {
     register,
     formState: { errors },
     handleSubmit,
+    reset,
   } = useForm({
     defaultValues: {
       phoneNumber: "",
@@ -42,7 +43,7 @@ export const FormComponent: FC = () => {
     <div>
       <form
         onSubmit={handleSubmit((data) => {
-          console.log(data);
+          reset({ phoneNumber: "", email: "", message: "" });
           toast.success("Сообщение отправлено", {
             description: new Date().toLocaleString(),
           });
