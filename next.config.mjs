@@ -10,7 +10,11 @@ const nextConfig = {
 
             {
                 hostname: 'picsum.photos'
-            }
+            },
+
+            {
+                hostname: 'aceternity.com'
+            },
         ],
     },
 
