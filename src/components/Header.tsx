@@ -2,7 +2,7 @@
 
 import { navbar } from "@/constants/navbar";
 import { useSwitchUser } from "@/context/SwitchUserContext";
-import { users } from "@/lib/users";
+// import { users } from "@/lib/users";
 import { cn } from "@/lib/utils";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
@@ -19,6 +19,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
+import { users } from "@/lib/users";
 
 const varela = Varela_Round({ weight: "400", subsets: ["latin"] });
 
