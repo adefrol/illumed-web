@@ -28,7 +28,6 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <body className={`${inter.className}`}>
-        {/* <BackgroundGradientAnimation className=""> */}
         <Providers>
           <div className="bg-[url('/bgmain.png')] dark:bg-[url('/bgmain-dark.jpg')] bg-cover bg-center h-full w-full fixed block left-0 bottom-0 -z-10 scale-105 animate-bg-infinite"></div>
           <div className="py-[40px] transition-all  min-h-screen ">
@@ -38,7 +37,6 @@ export default function RootLayout({
             </div>
           </div>
         </Providers>
-        {/* </BackgroundGradientAnimation> */}
         <Toaster />
       </body>
     </html>
