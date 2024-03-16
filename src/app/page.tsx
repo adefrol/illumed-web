@@ -1,5 +1,7 @@
 import { Contacts } from "@/components/Contacts";
 import { PageTitle } from "@/components/PageTitle";
+import { ArrowDownAnimated } from "@/components/ui/arrow-down-animated";
+import { ReviewCard } from "@/pageComponents/home/review-card";
 import { Varela_Round } from "next/font/google";
 
 const varela = Varela_Round({ weight: ["400"], subsets: ["latin"] });
@@ -35,9 +37,16 @@ export default function Home() {
           вкладом в наши инновационные проекты." */}
         </p>
 
-        <div className="animate-slide-in mb-5">
+        <div className="animate-slide-in">
           <Contacts />
         </div>
+      </div>
+
+      <ArrowDownAnimated />
+
+      <div className="mt-20">
+        <PageTitle title="Отзывы" />
+        <ReviewCard />
       </div>
     </div>
   );
