@@ -5,7 +5,7 @@ interface Props {}
 
 const Page: NextPage<Props> = ({}) => {
   return (
-    <div>
+    <div className="">
       <ProjectIdPage />
     </div>
   );
