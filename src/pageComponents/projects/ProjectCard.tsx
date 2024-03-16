@@ -13,7 +13,7 @@ interface IProps {
 
 export const ProjectCard: FC<IProps> = ({ projects }) => {
   return (
-    <div className="grid grid-cols-2 lg:gap-[60px] max-[639px]:flex max-[639px]:flex-col max-[639px]:gap-[40px] animate-slide-in">
+    <div className="grid grid-cols-3 max-[1650px]:grid-cols-2 lg:gap-[60px]  max-[639px]:flex max-[639px]:flex-col max-[639px]:gap-[40px] animate-slide-in">
       {projects.map((project) => (
         <CardContainer key={project.id} className="inter-var ">
           <CardBody
