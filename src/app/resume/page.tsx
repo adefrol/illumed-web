@@ -10,9 +10,8 @@ const Page: NextPage<Props> = ({}) => {
   return (
     <>
       <FloatingNav navItems={navbar} />
-      <Suspense fallback={null}>
-        <Content />
-      </Suspense>
+
+      <Content />
     </>
   );
 };
