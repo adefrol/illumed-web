@@ -36,7 +36,7 @@ export const ProjectCard: FC<IProps> = ({ projects }) => {
             </CardItem>
             <CardItem translateZ="100" className="w-full mt-4">
               <Image
-                src={project.img}
+                src={project?.img![0]}
                 height={1000}
                 width={1000}
                 className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
@@ -46,12 +46,10 @@ export const ProjectCard: FC<IProps> = ({ projects }) => {
             <div className="flex justify-between items-center mt-20">
               <CardItem
                 translateZ={20}
-                as={Link}
-                href={project?.link || "/"}
-                target="__blank"
-                className="px-4 py-2 rounded-xl cursor-pointer text-xs font-normal dark:text-white"
+                as={"p"}
+                className="px-4 py-2 rounded-xl select-none text-xs font-normal dark:text-white"
               >
-                Открыть проект
+                Подробнее →
               </CardItem>
               <CardItem
                 translateZ={20}
@@ -59,7 +57,7 @@ export const ProjectCard: FC<IProps> = ({ projects }) => {
                 className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
                 href={`/projects/${project.id}`}
               >
-                Подробнее
+                Открыть
               </CardItem>
             </div>
           </CardBody>
