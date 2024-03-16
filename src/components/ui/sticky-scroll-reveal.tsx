@@ -4,7 +4,7 @@ import { IContent } from "@/pageComponents/resume/content/Development";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import React, { useRef } from "react";
 
-export const StickyScroll = ({
+export const  StickyScroll = ({
   content,
   contentClassName,
 }: {
@@ -92,8 +92,11 @@ export const StickyScroll = ({
         // animate={{
         //   background: "black",
         // }}
+
+        //key для триггера анимации
+        key={Math.random()}
         className={cn(
-          "hidden lg:block h-60 w-80 rounded-md sticky top-10 overflow-hidden",
+          "hidden lg:block h-60 w-80 rounded-md sticky top-10 overflow-hidden animate-slide-from-left",
           contentClassName
         )}
       >

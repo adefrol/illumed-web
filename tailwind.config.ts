@@ -76,6 +76,11 @@ const config = {
           "30%": { opacity: "0" },
           "100%": { transform: "translateX(0px)" },
         },
+        "slide-from-left": {
+          "0%": { transform: "translateX(-150px)", opacity: "0", scale: "0.8" },
+          "30%": { opacity: "0" },
+          "100%": { transform: "translateX(0px)" },
+        },
         "bg-infinite": {
           "0%": {
             filter: "hue-rotate(0deg) contrast(100%)",
@@ -132,6 +137,7 @@ const config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "slide-in": "slide-in 0.9s ease-in-out",
+        "slide-from-left": "slide-from-left 1s ease-in-out",
         "bg-infinite": "bg-infinite 10s linear infinite",
         first: "moveVertical 30s ease infinite",
         second: "moveInCircle 20s reverse infinite",
