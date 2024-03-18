@@ -42,12 +42,12 @@ export default function Home() {
         </div>
       </div>
 
-      <ArrowDownAnimated />
+      {/* <ArrowDownAnimated />
 
       <div className="mt-20">
         <PageTitle title="Отзывы" />
         <ReviewCard />
-      </div>
+      </div> */}
     </div>
   );
 }

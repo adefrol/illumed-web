@@ -2,7 +2,6 @@
 
 import { navbar } from "@/constants/navbar";
 import { useSwitchUser } from "@/context/SwitchUserContext";
-// import { users } from "@/lib/users";
 import { cn } from "@/lib/utils";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
@@ -65,25 +64,32 @@ export const Header: FC = () => {
       shadow-[#7266e26a] max-[639px]:shadow-[#efdae6] shadow-xl dark:shadow-[#7266e233] max-[639px]:dark:shadow-[#efdae633]
       dark:backdrop-blur-md dark:bg-opacity-25 backdrop-blur-md bg-opacity-10 border border-black/[0.1] dark:border-white/[0.2]"
       >
-        {navbar.map((navItem) => (
-          <div key={navItem.id} className="cursor-pointer">
-            <Link
-              href={{
-                pathname: navItem.href,
-                query: {
-                  user: userParams,
-                  blog: blogParams,
-                },
-              }}
-              className={cn("font-semibold text-black/30 dark:text-white/30", {
-                "text-black dark:text-white transition duration-300":
-                  pathname === navItem.href,
-              })}
-            >
-              {navItem.title}
-            </Link>
-          </div>
-        ))}
+        {navbar.map((navItem) => {
+          return (
+            <div key={navItem.id} className="cursor-pointer">
+              <Link
+                href={{
+                  pathname: navItem.href,
+                  query: {
+                    user: userParams,
+                    blog: blogParams,
+                  },
+                }}
+                className={cn(
+                  "font-semibold text-black/30 dark:text-white/30 transition duration-300",
+                  {
+                    "text-black dark:text-white transition duration-300":
+                      navItem.href === "/" && pathname !== "/"
+                        ? ""
+                        : pathname.startsWith(navItem.href),
+                  }
+                )}
+              >
+                {navItem.title}
+              </Link>
+            </div>
+          );
+        })}
       </div>
 
       <div className="max-[639px]:hidden w-[170px] flex justify-end">

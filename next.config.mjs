@@ -15,6 +15,10 @@ const nextConfig = {
             {
                 hostname: 'aceternity.com'
             },
+
+            {
+                hostname: 'images.unsplash.com'
+            },
         ],
     },
 
