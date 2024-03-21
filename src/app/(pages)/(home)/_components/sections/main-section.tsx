@@ -9,7 +9,7 @@ import { Typewriter } from "react-simple-typewriter";
 
 export const MainSection: FC = () => {
   return (
-    <div className="max-w-[1200px] mx-auto">
+    <div className="max-w-[1200px] mx-auto py-96">
       <div className="flex items-start justify-center">
         <p className="max-w-[1000px] font-normal text-center text-[4vw] uppercase leading-tight filter drop-shadow-md text-white">
           <span className="text-violet-400">Студия разработки</span> сайтов и

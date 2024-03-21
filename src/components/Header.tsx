@@ -61,9 +61,9 @@ const headerTools = [
 export const Header: FC = () => {
   return (
     <div className={cn("fixed top-0 left-0 right-0 z-50 bg-[#080808]")}>
-      <div className="max-w-[1200px] mx-auto">
-        <div className="py-5 flex items-center justify-between">
-          <div className="flex items-center gap-5">
+      <div className="max-w-[1200px] mx-auto ">
+        <div className="py-5 flex items-center justify-between h-[88px]">
+          <div className="flex items-center gap-5 w-full h-[88px] ">
             <Logo />
 
             <div className="flex items-center gap-5">
