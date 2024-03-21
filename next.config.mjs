@@ -2,24 +2,10 @@
 const nextConfig = {
     images: {
         remotePatterns: [{
-                hostname: "img.freepik.com",
-            },
-            {
-                hostname: 'github.com'
-            },
-
-            {
-                hostname: 'picsum.photos'
-            },
-
-            {
-                hostname: 'aceternity.com'
-            },
-
-            {
-                hostname: 'images.unsplash.com'
-            },
-        ],
+            hostname: 'aceternity.com'
+        }, {
+            hostname: 'images.unsplash.com'
+        }]
     },
 
     experimental: {

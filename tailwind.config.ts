@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss";
 
+const colors = require("tailwindcss/colors");
 const {
   default: flattenColorPalette,
 } = require("tailwindcss/lib/util/flattenColorPalette");
@@ -71,16 +72,6 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
-        "slide-in": {
-          "0%": { transform: "translateY(-150px)", opacity: "0", scale: "0.8" },
-          "30%": { opacity: "0" },
-          "100%": { transform: "translateX(0px)" },
-        },
-        "slide-from-left": {
-          "0%": { transform: "translateX(-150px)", opacity: "0", scale: "0.8" },
-          "30%": { opacity: "0" },
-          "100%": { transform: "translateX(0px)" },
-        },
         "bg-infinite": {
           "0%": {
             filter: "hue-rotate(0deg) contrast(100%)",
@@ -93,59 +84,32 @@ const config = {
           },
         },
 
-        scroll: {
+        shimmer: {
+          from: {
+            backgroundPosition: "0 0",
+          },
           to: {
-            transform: "translate(calc(-50% - 0.5rem))",
+            backgroundPosition: "-200% 0",
           },
         },
 
-        moveHorizontal: {
+        spotlight: {
           "0%": {
-            transform: "translateX(-50%) translateY(-10%)",
-          },
-          "50%": {
-            transform: "translateX(50%) translateY(10%)",
+            opacity: '0',
+            transform: "translate(-72%, -62%) scale(0.5)",
           },
           "100%": {
-            transform: "translateX(-50%) translateY(-10%)",
-          },
-        },
-        moveInCircle: {
-          "0%": {
-            transform: "rotate(0deg)",
-          },
-          "50%": {
-            transform: "rotate(180deg)",
-          },
-          "100%": {
-            transform: "rotate(360deg)",
-          },
-        },
-        moveVertical: {
-          "0%": {
-            transform: "translateY(-50%)",
-          },
-          "50%": {
-            transform: "translateY(50%)",
-          },
-          "100%": {
-            transform: "translateY(-50%)",
+            opacity: '1',
+            transform: "translate(-50%,-40%) scale(1)",
           },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "slide-in": "slide-in 0.9s ease-in-out",
-        "slide-from-left": "slide-from-left 1s ease-in-out",
         "bg-infinite": "bg-infinite 10s linear infinite",
-        first: "moveVertical 30s ease infinite",
-        second: "moveInCircle 20s reverse infinite",
-        third: "moveInCircle 40s linear infinite",
-        fourth: "moveHorizontal 40s ease infinite",
-        fifth: "moveInCircle 20s ease infinite",
-        scroll:
-          "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
+        shimmer: "shimmer 2s linear infinite",
+        spotlight: "spotlight 2s ease .75s 1 forwards",
       },
     },
   },
