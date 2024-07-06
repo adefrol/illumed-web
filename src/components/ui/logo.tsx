@@ -17,13 +17,13 @@ export const Logo: FC = () => {
     smooth: 0.5,
   })
 
-  const translateY = useTransform(scrollYProgress, [0, 1], ["20rem", "0rem"])
+/*   const translateY = useTransform(scrollYProgress, [0, 1], ["20rem", "0rem"])
   const translateX = useTransform(scrollYProgress, [0, 1], ["15rem", "0rem"])
-  const fontSize = useTransform(scrollYProgress, [0, 1], ["8rem", "1.5rem"])
+  const fontSize = useTransform(scrollYProgress, [0, 1], ["8rem", "1.5rem"]) */
 
   return (
     <div className="relative h-full w-[20%] ">
-      <motion.div className="flex items-center absolute h-full" style={{ translateX, translateY, fontSize: fontSize }}>
+      <motion.div className="flex items-center absolute h-full" /* style={{ translateX, translateY, fontSize: fontSize }} */>
 
         <p className={cn("", jost.className)}>
           illumed<span className="text-violet-400">Web</span>
