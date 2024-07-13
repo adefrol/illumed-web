@@ -1,0 +1,66 @@
+import React, { SVGAttributes } from "react";
+
+export const Checked = ({
+    onClick,
+    size = 63,
+}: {
+    onClick?: React.MouseEventHandler<SVGSVGElement>;
+    size?: number;
+}) => {
+    return (
+        <svg
+            onClick={onClick}
+            width={size}
+            height={size}
+            viewBox="0 0 63 63"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <rect
+                x="1"
+                y="1.2793"
+                width="61"
+                height="59.7857"
+                rx="17"
+                stroke="white"
+                stroke-width="2"
+            />
+            <path
+                d="M45.1666 21.1196L26.3749 39.5491L17.8333 31.1721"
+                stroke="white"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            />
+        </svg>
+    );
+};
+
+export const Unchecked = ({
+    onClick,
+    size = 63,
+}: {
+    onClick?: React.MouseEventHandler<SVGSVGElement>;
+    size?: number;
+}) => {
+    return (
+        <svg
+            onClick={onClick}
+            width={size}
+            height={size}
+            viewBox="0 0 63 63"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <rect
+                x="1"
+                y="1.2793"
+                width="61"
+                height="59.7857"
+                rx="17"
+                stroke="white"
+                stroke-width="2"
+            />
+        </svg>
+    );
+};

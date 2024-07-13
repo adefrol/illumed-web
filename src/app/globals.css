@@ -113,3 +113,68 @@
     @apply bg-background text-foreground;
   }
 }
+
+.gradient-border {
+  display: block;
+  position: relative;
+  padding: 3px;
+  max-width: 800px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 15px;
+  border: 3px solid transparent;
+  background: linear-gradient(140deg, white,#393939) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+}
+
+.gradient-border-main-color {
+  display: block;
+  position: relative;
+  padding: 3px;
+  max-width: 800px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+  
+.gradient-border-main-color::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 15px;
+  border: 3px solid transparent;
+  background: linear-gradient(140deg, #A78BFA,#2D2642) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+}
+
+.gradient-border-white-to-main {
+  display: block;
+  position: relative;
+  padding: 2px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+  
+.gradient-border-white-to-main::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 15px;
+  border: 2px solid transparent;
+  background: linear-gradient(140deg, white,#A78BFA) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+}
