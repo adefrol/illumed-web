@@ -21,7 +21,7 @@ export const Logo: FC = () => {
             <div
                 className="flex items-center  h-full" /* style={{ translateX, translateY, fontSize: fontSize }} */
             >
-                <p className={cn("", jost.className)}>
+                <p className={cn("text-xl", jost.className)}>
                     illumed<span className="text-violet-400">Web</span>
                 </p>
             </div>

@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Checked, Unchecked } from "./checkbox";
 import { Button } from "./button";
+import Link from "next/link";
 
 export const ContactForm = () => {
     const [check, setCheck] = useState<boolean>(false);
@@ -27,13 +28,13 @@ export const ContactForm = () => {
                 )}
                 <p className='text-xl w-[70%]'>
                     Я согласен с{" "}
-                    <span className="text-primary underline">
+                    <Link href={'/'} className="text-primary underline">
                         политикой пользования
-                    </span>{" "}
+                    </Link>{" "}
                     и{" "}
-                    <span className="text-primary underline">
+                    <Link href={'/'} className="text-primary underline">
                         конфиденциальности
-                    </span>
+                    </Link>
                 </p>
             </div>
             <Button />

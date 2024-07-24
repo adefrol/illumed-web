@@ -1,6 +1,5 @@
 import { Footer } from "@/components/footer/footer";
 import { Header } from "@/components/header";
-import { url } from "inspector";
 import Image from "next/image";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
