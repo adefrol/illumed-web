@@ -18,7 +18,7 @@ export const ButtonGradient: FC<IProps> = ({
 }) => {
   return (
     <div
-      className={cn("", {
+      className={cn("cursor-pointer", {
         "gradient-border-white-to-main": type === "fill",
         "gradient-border-main-color": type === "outline",
       })}

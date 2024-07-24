@@ -143,6 +143,7 @@
   max-width: 800px;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
+  transition: all 0.5s ease-in-out;
 }
 
 .gradient-border-main-color::before {
@@ -156,6 +157,7 @@
   mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: destination-out;
   mask-composite: exclude;
+  transition: all 2s ease-in-out;
 }
 
 .gradient-border-white-to-main {
@@ -186,7 +188,7 @@
   max-width: 800px;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  transition: all 2s linear;
+  transition: all 2s ease-in-out;
 }
 
 .gradient-border-service-card::before {
