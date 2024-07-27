@@ -256,11 +256,11 @@
   mask-composite: exclude;
 }
 
-.project-border-animation {
-  animation: project-border-animation 3s linear infinite;
+.project-border-icon-animation {
+  animation: border-icon-animation 4s linear infinite;
 }
 
-@keyframes project-border-animation {
+@keyframes border-icon-animation {
   0% {
     border-color: white;
   }

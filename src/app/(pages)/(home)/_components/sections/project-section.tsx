@@ -9,7 +9,6 @@ import { icons } from "lucide-react";
 import { FC, useEffect, useState } from "react";
 
 export const ProjectSection: FC = () => {
-  const timer = 100;
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [widths, setWidths] = useState<number[]>(
     Array(projects.length).fill(0)
@@ -25,7 +24,7 @@ export const ProjectSection: FC = () => {
         setActiveIndex((prevIndex) => (prevIndex + 1) % projects.length);
         setWidths(Array(projects.length).fill(0));
       }
-    }, timer);
+    }, 100);
 
     return () => {
       clearInterval(interval);
@@ -43,23 +42,23 @@ export const ProjectSection: FC = () => {
 
       <div className="flex gap-[450px] mt-[170px]">
         <div className="flex flex-col items-center gap-10">
-          {projects.map((project, index) => {
+          {projects.map((project, idx) => {
             const Icon = icons[project.icon];
 
             return (
-              <div key={project.id} className="">
+              <div key={project.id} className="cursor-pointer">
                 <ProjectsCardBg
                   style={{
-                    width: `${widths[index]}%`,
+                    width: `${widths[idx]}%`,
                     transition: "width 1.5s ease",
-                    borderTopRightRadius: index === 0 ? "20px" : "20px",
-                    borderBottomRightRadius: index === 0 ? "20px" : "20px",
+                    borderTopRightRadius: idx === 0 ? "20px" : "20px",
+                    borderBottomRightRadius: idx === 0 ? "20px" : "20px",
                   }}
                 >
                   <div className="flex items-center gap-3">
                     <div
-                      className={cn("border border-white p-2 rounded-sm", {
-                        "project-border-animation": activeIndex === index,
+                      className={cn("", {
+                        "project-border-icon-animation": activeIndex === idx,
                       })}
                     >
                       <Icon name={project.icon} />
@@ -76,8 +75,12 @@ export const ProjectSection: FC = () => {
           </ButtonGradient>
         </div>
 
-        <div className="shadow-[170px_0px_180px_90px_#594e78] rounded-3xl">
-          <CardStack items={projects} />
+        <div className="">
+          <CardStack
+            activeIndex={activeIndex}
+            widths={widths}
+            items={projects}
+          />
         </div>
       </div>
     </div>

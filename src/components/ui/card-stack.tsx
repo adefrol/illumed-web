@@ -1,40 +1,33 @@
 "use client";
-import { useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { IProjects } from "@/constants/projects";
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 
-let interval: any;
+interface IProps {
+  items: IProjects[];
+  activeIndex: number;
+  widths: number[];
+}
 
-type Card = IProjects;
-
-export const CardStack = ({
-  items,
-  offset,
-  scaleFactor,
-}: {
-  items: Card[];
-  offset?: number;
-  scaleFactor?: number;
-}) => {
-  const CARD_OFFSET = offset || 10;
-  const SCALE_FACTOR = scaleFactor || 0.06;
-  const [cards, setCards] = useState<Card[]>(items);
+export const CardStack: FC<IProps> = ({ items, activeIndex, widths }) => {
+  const CARD_OFFSET = 10;
+  const SCALE_FACTOR = 0.06;
+  const [cards, setCards] = useState<IProjects[]>(items);
 
   useEffect(() => {
-    startFlipping();
+    const updatedWidths = [...widths];
+    updatedWidths[activeIndex] = updatedWidths[activeIndex] + 10;
 
-    return () => clearInterval(interval);
-  }, []);
-  const startFlipping = () => {
-    interval = setInterval(() => {
-      setCards((prevCards: Card[]) => {
-        const newArray = [...prevCards]; // create a copy of the array
-        newArray.unshift(newArray.pop()!); // move the last element to the front
-        return newArray;
+    if (updatedWidths[activeIndex] === 250) {
+      setCards((prevCards) => {
+        const newCards = [...prevCards];
+        newCards.push(newCards.shift()!);
+        return newCards;
       });
-    }, 2770);
-  };
+    }
+  }, [activeIndex, widths]);
 
   return (
     <div className="relative h-[700px] w-[700px] md:h-60 md:w-96">
@@ -42,14 +35,16 @@ export const CardStack = ({
         return (
           <motion.div
             key={card.id}
-            className="absolute bg-white h-[400px] w-[700px] rounded-3xl p-4 shadow-xl border border-neutral-200 dark:border-white/[0.1]  shadow-black/[0.1] dark:shadow-white/[0.05] flex flex-col justify-between"
+            className={cn(
+              "absolute bg-transparent h-[400px] w-[700px] p-4 flex flex-col justify-between"
+            )}
             style={{
               transformOrigin: "top center",
             }}
             animate={{
               top: index * -CARD_OFFSET,
-              scale: 1 - index * SCALE_FACTOR, // decrease scale for cards that are behind
-              zIndex: cards.length - index, //  decrease z-index for the cards that are behind
+              scale: 1 - index * SCALE_FACTOR,
+              zIndex: cards.length - index,
             }}
           >
             <Image
@@ -57,7 +52,7 @@ export const CardStack = ({
               alt={card.name}
               width={1000}
               height={1000}
-              className="w-[700px] h-[700px]"
+              className="w-[700px] min-h-[400px] rounded-3xl hover:scale-105 transition duration-300 ease-in-out cursor-pointer"
             />
           </motion.div>
         );

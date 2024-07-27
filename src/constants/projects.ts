@@ -19,7 +19,7 @@ export const projects: IProjects[] = [
     id: "2",
     name: "Рег.ру - аренда сервера",
     icon: "Folder",
-    img: "/projects/reg-project.png",
+    img: "/projects/dota.png",
   },
 
   {
