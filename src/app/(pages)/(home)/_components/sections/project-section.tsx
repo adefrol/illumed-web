@@ -70,7 +70,7 @@ export const ProjectSection: FC = () => {
             );
           })}
 
-          <ButtonGradient type="outline" className="px-7 py-4">
+          <ButtonGradient type="outline" buttonClassName="px-7 py-4">
             Посмотреть все
           </ButtonGradient>
         </div>

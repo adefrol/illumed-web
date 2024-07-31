@@ -10,9 +10,13 @@ export const MainSection: FC = () => {
         <p className="font-medium text-6xl">САЙТОВ И МОБИЛЬНЫХ ПРИЛОЖЕНИЙ</p>
       </div>
       <div className="flex gap-5 items-center justify-center py-10">
-        <ButtonGradient className="p-3 px-16">Проекты</ButtonGradient>
+        <ButtonGradient buttonClassName="p-3 px-16">Проекты</ButtonGradient>
 
-        <ButtonGradient className="p-3 px-16" type="outline">
+        <ButtonGradient
+          buttonClassName="p-3 px-16"
+          className="hover:shadow-[#023233] shadow-2xl transition duration-300 ease-in-out"
+          type="outline"
+        >
           Связаться с нами
         </ButtonGradient>
       </div>

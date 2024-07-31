@@ -1,30 +1,28 @@
 "use client";
 import { cn } from "@/lib/utils";
-import { MotionValue, useScroll, useSpring, useTransform } from "framer-motion";
-import { Jost, Varela_Round } from "next/font/google";
-import { FC, useRef } from "react";
-import { motion } from "framer-motion";
+import { Varela_Round } from "next/font/google";
+import { FC } from "react";
 
 const jost = Varela_Round({ subsets: ["latin"], weight: "400" });
 
-export const Logo: FC = () => {
-/*     const { scrollYProgress } = useScroll({
-        smooth: 0.5,
-    }); */
+interface IProps {
+  fontSize?: string;
+}
 
-    /*   const translateY = useTransform(scrollYProgress, [0, 1], ["20rem", "0rem"])
-  const translateX = useTransform(scrollYProgress, [0, 1], ["15rem", "0rem"])
-  const fontSize = useTransform(scrollYProgress, [0, 1], ["8rem", "1.5rem"]) */
-
-    return (
-        <div className="relative h-full ">
-            <div
-                className="flex items-center  h-full" /* style={{ translateX, translateY, fontSize: fontSize }} */
-            >
-                <p className={cn("text-xl", jost.className)}>
-                    illumed<span className="text-violet-400">Web</span>
-                </p>
-            </div>
-        </div>
-    );
+export const Logo: FC<IProps> = ({ fontSize }) => {
+  return (
+    <div className="relative h-full ">
+      <div
+        className="flex items-center  h-full" /* style={{ translateX, translateY, fontSize: fontSize }} */
+      >
+        <p
+          className={cn(fontSize, jost.className, {
+            "text-xl": !fontSize,
+          })}
+        >
+          illumed<span className="text-violet-400">Web</span>
+        </p>
+      </div>
+    </div>
+  );
 };

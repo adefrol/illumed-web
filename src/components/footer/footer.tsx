@@ -31,7 +31,7 @@ export const Footer = () => {
       </div>
       <div className="grid grid-cols-5 py-10">
         <div className="text-4xl">
-          <Logo />
+          <Logo fontSize="text-4xl" />
         </div>
         <div className="text-3xl">
           <p className="underline">+7 (999) 999-99-99</p>
