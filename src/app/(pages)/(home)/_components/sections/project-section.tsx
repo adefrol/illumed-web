@@ -32,7 +32,7 @@ export const ProjectSection: FC = () => {
   }, [activeIndex, widths]);
 
   return (
-    <div className="max-w-[1500px] mx-auto py-40">
+    <div className="max-w-[1500px] mx-auto h-[105vh] flex flex-col justify-center">
       <div className="text-center flex justify-between">
         <h2 className="text-center text-7xl font-medium">ПРОЕКТЫ</h2>
         <p className="font-extralight text-3xl text-right w-1/2">
@@ -40,7 +40,7 @@ export const ProjectSection: FC = () => {
         </p>
       </div>
 
-      <div className="flex gap-[450px] mt-[170px]">
+      <div className="flex gap-[250px] mt-[130px]">
         <div className="flex flex-col items-center gap-10">
           {projects.map((project, idx) => {
             const Icon = icons[project.icon];
@@ -63,16 +63,16 @@ export const ProjectSection: FC = () => {
                     >
                       <Icon name={project.icon} />
                     </div>
-                    <p className="text-lg">{project.name}</p>
+                    <p className="text-xl font-medium">{project.name}</p>
                   </div>
                 </ProjectsCardBg>
               </div>
             );
           })}
 
-          <ButtonGradient type="outline" buttonClassName="px-7 py-4">
+          {/* <ButtonGradient type="outline" buttonClassName="px-7 py-4">
             Посмотреть все
-          </ButtonGradient>
+          </ButtonGradient> */}
         </div>
 
         <div className="">

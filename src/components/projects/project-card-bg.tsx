@@ -14,7 +14,7 @@ export const ProjectsCardBg: FC<IProps> = ({ children, style }) => {
         style={style}
         className="bg-gradient-to-r from-[#a287f4] to-transparent h-[66px] absolute rounded-r-[20px] rounded-l-lg -z-10 max-w-[100%]"
       />
-      <div className="w-full rounded-lg bg-gradient-to-r from-black/50 to-gray-50/10 py-3 px-10">
+      <div className="w-[550px] rounded-lg bg-gradient-to-r from-black/50 to-gray-50/10 py-5 px-10">
         {children}
       </div>
     </div>

@@ -9,16 +9,16 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         draggable={"false"}
         src={"/planet.webp"}
         alt="planet"
-        width={300}
-        height={300}
+        width={250}
+        height={250}
         className="fixed -z-10 left-36 top-96"
       />
       <Image
         draggable={"false"}
         src={"/planet.webp"}
         alt="planet"
-        width={300}
-        height={300}
+        width={250}
+        height={250}
         className="fixed -z-10 right-36 top-44"
       />
       <Image

@@ -30,13 +30,13 @@ export const CardStack: FC<IProps> = ({ items, activeIndex, widths }) => {
   }, [activeIndex, widths]);
 
   return (
-    <div className="relative h-[700px] w-[700px] md:h-60 md:w-96">
+    <div className="relative h-[700px] w-[700px] md:h-60 md:w-96 ">
       {cards.map((card, index) => {
         return (
           <motion.div
             key={card.id}
             className={cn(
-              "absolute bg-transparent h-[400px] w-[700px] p-4 flex flex-col justify-between"
+              "absolute bg-transparent h-[400px] w-[700px] p-4 flex flex-col justify-between drop-shadow-[0_0px_60px_rgba(179,156,247,0.7)]"
             )}
             style={{
               transformOrigin: "top center",
