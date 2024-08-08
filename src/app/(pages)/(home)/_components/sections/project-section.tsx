@@ -32,15 +32,15 @@ export const ProjectSection: FC = () => {
   }, [activeIndex, widths]);
 
   return (
-    <div className="max-w-[1500px] mx-auto h-[105vh] flex flex-col justify-center">
+    <div id="projects" className="h-[105vh] flex flex-col justify-center">
       <div className="text-center flex justify-between">
-        <h2 className="text-center text-7xl font-medium">ПРОЕКТЫ</h2>
+        <h2 className="text-center max-2xl:text-7xl text-5xl font-medium">ПРОЕКТЫ</h2>
         <p className="font-extralight text-3xl text-right w-1/2">
           Предлагаем вам ознакомиться с готовыми проектами наших клиентов
         </p>
       </div>
 
-      <div className="flex gap-[250px] mt-[130px]">
+      <div className="flex max-2xl:gap-[250px] gap-[125px] mt-[130px]">
         <div className="flex flex-col items-center gap-10">
           {projects.map((project, idx) => {
             const Icon = icons[project.icon];

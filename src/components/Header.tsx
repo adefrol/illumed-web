@@ -23,7 +23,7 @@ export const Header: FC = () => {
               <div key={nav.id} className="">
                 <Link
                   href={nav.href}
-                  className="text-white/50 hover:text-white transition duration-300"
+                  className="text-white/50 hover:text-white hover:drop-shadow-[0_0_4px_#ccc] transition duration-300"
                 >
                   {nav.title}
                 </Link>

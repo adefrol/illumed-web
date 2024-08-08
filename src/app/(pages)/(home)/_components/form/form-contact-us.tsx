@@ -14,7 +14,7 @@ import { cn } from "@/lib/utils";
 
 export const FormContactUs: FC = () => {
   const phoneRegex = new RegExp(
-    /^[+]?[(]?[0-9]{1,4}[)]?[-\s]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/g,
+    /^[+]?[(]?[0-9]{1,4}[)]?[-\s]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/g
   );
 
   const schema = z.object({
@@ -62,7 +62,7 @@ export const FormContactUs: FC = () => {
                 "focus-visible:shadow-[#023233] transition duration-300",
                 {
                   "focus-visible:shadow-red-500": errors.phoneNumber,
-                },
+                }
               )}
             />
             {errors.phoneNumber && (
@@ -82,14 +82,14 @@ export const FormContactUs: FC = () => {
             {...register("message")}
             placeholder="Сообщение"
             className={cn(
-              "focus-visible:shadow-[#023233] focus-visible:shadow-lg transition duration-300",
+              "focus-visible:shadow-[#023233] focus-visible:shadow-lg transition duration-300"
             )}
           />
 
           <Button
             className="w-full"
             size={"lg"}
-            type="submit"
+            buttonType="submit"
             variant="outline"
           >
             Отправить

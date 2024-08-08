@@ -10,9 +10,9 @@ const jost = Varela_Round({ subsets: ["latin"], weight: '400' });
 
 export const ServiceSection: FC = () => {
     return (
-        <div className="max-w-[1500px] mx-auto h-[50vh] flex flex-col justify-center">
+        <div id='services' className="h-[50vh] flex flex-col justify-center">
             <div className="text-center flex flex-col gap-5">
-                <h2 className="text-7xl font-medium">УСЛУГИ</h2>
+                <h2 className="max-2xl:text-7xl text-5xl font-medium">УСЛУГИ</h2>
                 <p className="font-extralight text-3xl w-2/3 mx-auto">
                     Студия{" "}
                     <span className={jost.className}>

@@ -8,24 +8,24 @@ export const navbar: INavbar[] = [
   {
     id: "1",
     title: "О нас",
-    href: "/",
+    href: "#about",
   },
 
   {
     id: "2",
     title: "Услуги",
-    href: "/",
+    href: "#services",
   },
 
   {
     id: "3",
     title: "Проекты",
-    href: "/",
+    href: "#projects",
   },
 
   {
     id: "4",
     title: "Контакты",
-    href: "/",
+    href: "#contacts",
   },
 ];

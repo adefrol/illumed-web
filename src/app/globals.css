@@ -134,7 +134,7 @@
     position: absolute;
     inset: 0;
     border-radius: 15px;
-    border: 3px solid transparent;
+    border: 2px solid transparent;
     background: linear-gradient(140deg, white, #a78bfa) border-box;
     -webkit-mask: linear-gradient(#fff 0 0) padding-box,
         linear-gradient(#fff 0 0);
@@ -214,7 +214,7 @@
     mask-composite: exclude;
 }
 
-.gradient-border-service-card:hover::before {
+.gradient-border-service-card::before:hover {
     background: linear-gradient(-140deg, #a78bfa, #262626) border-box;
 }
 

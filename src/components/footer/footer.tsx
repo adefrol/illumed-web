@@ -29,7 +29,7 @@ export const Footer = () => {
 
         <ContactForm />
       </div>
-      <div className="grid grid-cols-5 py-10">
+      <div id="contacts" className="grid max-2xl:grid-cols-5 grid-cols-3 py-10">
         <div className="text-4xl">
           <Logo fontSize="text-4xl" />
         </div>

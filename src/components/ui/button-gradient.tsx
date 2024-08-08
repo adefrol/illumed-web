@@ -1,38 +1,56 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { FC } from "react";
+import { FC, forwardRef } from "react";
+import Link from "next/link";
 
 type ButtonType = "fill" | "outline";
+type Tag = "button" | "link";
 
 interface IProps {
   children: React.ReactNode;
-  type?: ButtonType;
+  buttonType?: ButtonType;
   className?: string;
   buttonClassName?: string;
+  type?: React.ButtonHTMLAttributes<HTMLButtonElement>["type"];
+  tag?: Tag;
+  href?: string;
 }
 
-export const ButtonGradient: FC<IProps> = ({
-  children,
-  className,
-  buttonClassName,
-  type = "fill",
-}) => {
-  return (
-    <div
-      className={cn("cursor-pointer", className, {
-        "gradient-border-white-to-main": type === "fill",
-        "gradient-border-main-color": type === "outline",
-      })}
-    >
-      <button
-        className={cn("text-lg rounded-xl", buttonClassName, {
-          "bg-primary text-black": type === "fill",
-          "bg-black text-white": type === "outline",
+export const ButtonGradient = forwardRef<HTMLButtonElement, IProps>(
+  (
+    {
+      children,
+      className,
+      buttonClassName,
+      buttonType = "fill",
+      tag = "button",
+      href,
+      ...props
+    },
+    ref
+  ) => {
+    const Component = tag === "link" ? Link : "button";
+
+    return (
+      <Component
+        {...props}
+        href={href ?? '#'}
+        ref={ref as React.Ref<HTMLButtonElement> | any}
+        className={cn("cursor-pointer", className, {
+          "gradient-border-white-to-main": buttonType === "fill",
+          "gradient-border-main-color": buttonType === "outline",
         })}
       >
-        {children}
-      </button>
-    </div>
-  );
-};
+        <div
+          className={cn("text-lg rounded-xl z-10", buttonClassName, {
+            "bg-primary text-black": buttonType === "fill",
+            "bg-black text-white": buttonType === "outline",
+          })}
+        >
+          {children}
+        </div>
+      </Component>
+    );
+  }
+);

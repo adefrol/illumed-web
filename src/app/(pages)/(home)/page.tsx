@@ -12,14 +12,13 @@ export default function Home() {
         <AboutUsSection />
       </div>
 
-      <ServiceSection />
+      <div className="max-2xl:mt-0 mt-40">
+        <ServiceSection />
+      </div>
 
-      <ProjectSection />
-      {/* <MarqqueeCard technologies={technologies} /> */}
-
-      {/* <div className="mt-[200px]">
-        <PriceSection />
-      </div> */}
+      <div className="max-2xl:mt-0 mt-40">
+        <ProjectSection />
+      </div>
     </div>
   );
 }

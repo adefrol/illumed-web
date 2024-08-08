@@ -16,8 +16,8 @@ export const AboutUsSection: FC = () => {
     }, [activeTitle]);
 
     return (
-        <div className="h-[75vh] flex flex-col justify-center">
-            <p className="uppercase text-[42px] font-medium">наши качества</p>
+        <div id="about" className="h-[75vh] flex flex-col justify-center">
+            <p className="uppercase max-2xl:text-[42px] text-[36px] font-medium">наши качества</p>
             <div className="flex items-center justify-between">
                 <div className="max-w-[445px] w-full">
                     {textContent.map((text, idx) => (
@@ -25,7 +25,7 @@ export const AboutUsSection: FC = () => {
                             key={text.id}
                             onClick={() => setActiveTitle(idx)}
                             className={cn(
-                                "text-[42px] uppercase font-medium tracking-tighter text-[#6F6F6F] cursor-pointer hover:text-white transition duration-300 select-none",
+                                "max-2xl:text-[42px] text-[36px] uppercase font-medium tracking-tighter text-[#6F6F6F] cursor-pointer hover:text-white transition duration-300 select-none",
                                 {
                                     "text-white drop-shadow-[0_0_4px_#ccc]":
                                         activeTitle === idx,
