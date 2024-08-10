@@ -1,6 +1,7 @@
 "use client";
 
 import { ProjectsCardBg } from "@/components/projects/project-card-bg";
+import { Title } from "@/components/title";
 import { ButtonGradient } from "@/components/ui/button-gradient";
 import { CardStack } from "@/components/ui/card-stack";
 import { projects } from "@/constants/projects";
@@ -32,16 +33,16 @@ export const ProjectSection: FC = () => {
   }, [activeIndex, widths]);
 
   return (
-    <div id="projects" className="h-[105vh] flex flex-col justify-center">
-      <div className="text-center flex justify-between">
-        <h2 className="text-center max-2xl:text-7xl text-5xl font-medium">ПРОЕКТЫ</h2>
-        <p className="font-extralight text-3xl text-right w-1/2">
+    <div className="lg:h-[105vh] flex flex-col justify-center">
+      <div className="text-center flex lg:flex-row flex-col lg:justify-between justify-center">
+        <Title title="проекты" />
+        <p className="font-extralight text-[calc(16px+8*(100vw-320px)/1920)] lg:text-right text-center lg:w-1/2">
           Предлагаем вам ознакомиться с готовыми проектами наших клиентов
         </p>
       </div>
 
-      <div className="flex max-2xl:gap-[250px] gap-[125px] mt-[130px]">
-        <div className="flex flex-col items-center gap-10">
+      <div className="flex lg:flex-row md:flex-row flex-col 2xl:gap-[250px] lg:gap-[125px] lg:mt-[130px] mt-20 lg:justify-normal justify-center">
+        <div className="flex flex-col items-center justify-center gap-10">
           {projects.map((project, idx) => {
             const Icon = icons[project.icon];
 
@@ -75,7 +76,7 @@ export const ProjectSection: FC = () => {
           </ButtonGradient> */}
         </div>
 
-        <div className="">
+        <div className="mt-32 md:mt-0 relative">
           <CardStack
             activeIndex={activeIndex}
             widths={widths}

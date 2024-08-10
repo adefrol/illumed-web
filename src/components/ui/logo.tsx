@@ -20,7 +20,10 @@ export const Logo: FC<IProps> = ({ fontSize }) => {
             "text-xl": !fontSize,
           })}
         >
-          illumed<span className="text-violet-400">Web</span>
+          illumed
+          <span className="text-violet-400 drop-shadow-[0_0_3px_#A78BFA]">
+            Web
+          </span>
         </p>
       </div>
     </div>

@@ -1,4 +1,4 @@
-interface INavbar {
+export interface INavbar {
   id: string;
   title: string;
   href: string;

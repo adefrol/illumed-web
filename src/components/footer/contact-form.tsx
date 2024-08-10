@@ -5,7 +5,7 @@ import { formSchema } from "@/schemas/form-schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { CircleHelp, Loader2 } from "lucide-react";
 import Link from "next/link";
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { z } from "zod";
 import { ButtonGradient } from "../ui/button-gradient";
@@ -21,6 +21,12 @@ import { useMutation } from "@tanstack/react-query";
 import { EmailAction } from "@/actions/email-action";
 
 export const ContactForm: FC = () => {
+  // const [windowWidth, setWindowWidth] = useState<number | null>(null);
+
+  // useEffect(() => {
+  //   setWindowWidth(window.innerWidth);
+  // }, []);
+
   const {
     register,
     formState: { errors },
@@ -71,7 +77,7 @@ export const ContactForm: FC = () => {
           )}
         >
           <TooltipProvider>
-            <Tooltip>
+            <Tooltip open={errors.email && errors.email.message !== undefined}>
               <TooltipTrigger className="cursor-default">
                 <CircleHelp className="text-red-400" />
               </TooltipTrigger>

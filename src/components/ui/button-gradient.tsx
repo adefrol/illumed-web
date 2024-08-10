@@ -30,13 +30,32 @@ export const ButtonGradient = forwardRef<HTMLButtonElement, IProps>(
     },
     ref
   ) => {
-    const Component = tag === "link" ? Link : "button";
+    if (tag === "link") {
+      return (
+        <Link
+          href={href ?? "#"}
+          ref={ref as React.Ref<HTMLAnchorElement>}
+          className={cn("cursor-pointer", className, {
+            "gradient-border-white-to-main": buttonType === "fill",
+            "gradient-border-main-color": buttonType === "outline",
+          })}
+        >
+          <div
+            className={cn("text-lg rounded-xl z-10", buttonClassName, {
+              "bg-primary text-black": buttonType === "fill",
+              "bg-black text-white": buttonType === "outline",
+            })}
+          >
+            {children}
+          </div>
+        </Link>
+      );
+    }
 
     return (
-      <Component
+      <button
         {...props}
-        href={href ?? '#'}
-        ref={ref as React.Ref<HTMLButtonElement> | any}
+        ref={ref as React.Ref<HTMLButtonElement>}
         className={cn("cursor-pointer", className, {
           "gradient-border-white-to-main": buttonType === "fill",
           "gradient-border-main-color": buttonType === "outline",
@@ -50,7 +69,7 @@ export const ButtonGradient = forwardRef<HTMLButtonElement, IProps>(
         >
           {children}
         </div>
-      </Component>
+      </button>
     );
   }
 );

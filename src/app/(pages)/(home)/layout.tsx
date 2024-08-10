@@ -39,9 +39,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         className="fixed -z-10 top-1/2 left-1/2"
         style={{ transform: "translate(-50%, -50%)" }}
       />
-      <div className="max-2xl:max-w-[1500px] max-w-[1300px] mx-auto w-full">
+      <div className="max-2xl:max-w-[1500px] xl:max-w-[1300px] xl:px-0 px-10 lg:py-0 pt-10 mx-auto w-full">
         <Header />
-        <div className="my-48">{children}</div>
+        <div className="lg:my-48 my-20">{children}</div>
         <Footer />
       </div>
     </>

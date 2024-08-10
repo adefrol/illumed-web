@@ -8,15 +8,15 @@ export default function Home() {
     <div className="">
       <MainSection />
 
-      <div className="">
+      <div id="about" className="">
         <AboutUsSection />
       </div>
 
-      <div className="max-2xl:mt-0 mt-40">
+      <div id="services" className="max-2xl:mt-0 lg:mt-40">
         <ServiceSection />
       </div>
 
-      <div className="max-2xl:mt-0 mt-40">
+      <div id="projects" className="max-2xl:mt-0 lg:mt-40">
         <ProjectSection />
       </div>
     </div>
