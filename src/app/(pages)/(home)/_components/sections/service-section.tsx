@@ -43,7 +43,7 @@ export const ServiceSection: FC = () => {
                 </p>
                 <p
                   className={cn(
-                    "font-extralight text-lg min-h-[calc(200px-195*(100vw-1024px)/1920)]"
+                    "font-extralight text-lg min-h-[calc(200px+1*(100vw-1024px)/1920)]"
                   )}
                 >
                   {service.description}

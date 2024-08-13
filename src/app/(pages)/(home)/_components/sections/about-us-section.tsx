@@ -12,7 +12,7 @@ export const AboutUsSection: FC = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveTitle((prev) => (prev + 1) % textContent.length);
-    }, 3000);
+    }, 5000);
     return () => clearInterval(interval);
   }, [activeTitle]);
 

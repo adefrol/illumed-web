@@ -11,7 +11,7 @@ export const MainSection: FC = () => {
           СТУДИЯ РАЗРАБОТКИ
         </p>
         <p className="font-medium text-[calc(24px+36*(100vw-320px)/1920)] text-center">
-          САЙТОВ И МОБИЛЬНЫХ ПРИЛОЖЕНИЙ
+          САЙТОВ
         </p>
       </div>
       <div className="flex gap-5 items-center justify-center py-10">
