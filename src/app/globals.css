@@ -240,9 +240,9 @@
   mask-composite: exclude;
 }
 
-.gradient-border-project-card:hover::before {
+/* .gradient-border-project-card:hover::before {
   background: linear-gradient(-140deg, #a78bfa, #262626) border-box;
-}
+} */
 
 .gradient-border-main-to-dark {
   display: block;

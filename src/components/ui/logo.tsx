@@ -13,7 +13,7 @@ export const Logo: FC<IProps> = ({ fontSize }) => {
   return (
     <div className="relative h-full ">
       <div
-        className="flex items-center  h-full" /* style={{ translateX, translateY, fontSize: fontSize }} */
+        className="flex items-center h-full" /* style={{ translateX, translateY, fontSize: fontSize }} */
       >
         <p
           className={cn(fontSize, jost.className, {

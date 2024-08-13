@@ -10,7 +10,6 @@ import {
     DrawerTrigger,
 } from "@/components/ui/drawer";
 import { FC } from "react";
-import { FormContactUs } from "./form/form-contact-us";
 import { SocialIcon } from "./social-icon";
 
 export const ContactUs: FC = () => {
@@ -44,7 +43,8 @@ export const ContactUs: FC = () => {
             </DrawerHeader>
 
             <div className="p-4 pb-0 space-y-4">
-              <FormContactUs />
+              {/* <FormContactUs /> */}
+              
 
               <div className="flex justify-center items-center gap-2">
                 <div className="w-full h-[0.5px] bg-black/50 dark:bg-white/50" />
