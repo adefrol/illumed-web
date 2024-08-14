@@ -6,6 +6,7 @@ import { projects } from '@/constants/projects';
 import { cn } from '@/lib/utils';
 import { Folder } from 'lucide-react';
 import { FC, useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 
 export const ProjectSection: FC = () => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
@@ -49,7 +50,7 @@ export const ProjectSection: FC = () => {
               <div className="flex items-center gap-2">
                 <div
                   className={cn(
-                    'border border-black bg-black p-2 rounded-lg transition duration-1000',
+                    'border border-black bg-gradient-to-t from-black via-black to-black p-2 rounded-lg transition-all duration-1000',
                     {
                       'border-primary bg-gradient-to-t from-primary via-black to-black':
                         activeIndex === idx,
@@ -92,6 +93,16 @@ export const ProjectSection: FC = () => {
             items={projects}
           />
         </div>
+
+        <motion.div
+          key={projects[activeIndex].id}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className="lg:mt-80"
+        >
+          <p className="text-[#a7a7a7] text-[32px]">{projects[activeIndex].description}</p>
+        </motion.div>
       </div>
     </div>
   );
