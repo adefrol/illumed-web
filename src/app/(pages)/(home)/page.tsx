@@ -16,7 +16,7 @@ export default function Home() {
         <ServiceSection />
       </div>
 
-      <div id="projects" className="max-2xl:mt-0 lg:mt-40">
+      <div id="projects" className="max-2xl:mt-0 lg:mt-80">
         <ProjectSection />
       </div>
     </div>

@@ -86,7 +86,7 @@ export const ProjectSection: FC = () => {
             </div>
           ))}
         </div>
-        <div className="lg:my-32 md:my-20 relative lg:-left-32">
+        <div className="lg:my-32 md:my-20 my-20 relative lg:-left-32">
           <CardStack
             activeIndex={activeIndex}
             widths={widths}
@@ -99,7 +99,7 @@ export const ProjectSection: FC = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="lg:mt-80 md:mt-32"
+          className="lg:mt-80 md:mt-32 mt-0"
         >
           <p className="text-[#a7a7a7] text-[32px]">{projects[activeIndex].description}</p>
         </motion.div>
