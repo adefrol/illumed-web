@@ -41,7 +41,7 @@ export const ProjectSection: FC = () => {
       </div>
 
       <div className="flex flex-col items-center w-full">
-        <div className="flex items-center justify-around mt-20 w-full">
+        <div className="flex lg:flex-row flex-col lg:gap-0 gap-5 items-center justify-around mt-20 w-full">
           {projects.map((project, idx) => (
             <div
               key={project.id}
@@ -86,7 +86,7 @@ export const ProjectSection: FC = () => {
             </div>
           ))}
         </div>
-        <div className="lg:my-32 md:mt-0 relative lg:-left-32">
+        <div className="lg:my-32 md:my-20 relative lg:-left-32">
           <CardStack
             activeIndex={activeIndex}
             widths={widths}
@@ -99,7 +99,7 @@ export const ProjectSection: FC = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="lg:mt-80"
+          className="lg:mt-80 md:mt-32"
         >
           <p className="text-[#a7a7a7] text-[32px]">{projects[activeIndex].description}</p>
         </motion.div>
