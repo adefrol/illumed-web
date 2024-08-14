@@ -1,13 +1,11 @@
-"use client";
+'use client';
 
-import { ProjectsCardBg } from "@/components/projects/project-card-bg";
-import { Title } from "@/components/title";
-import { ButtonGradient } from "@/components/ui/button-gradient";
-import { CardStack } from "@/components/ui/card-stack";
-import { projects } from "@/constants/projects";
-import { cn } from "@/lib/utils";
-import { icons } from "lucide-react";
-import { FC, useEffect, useState } from "react";
+import { Title } from '@/components/title';
+import { CardStack } from '@/components/ui/card-stack';
+import { projects } from '@/constants/projects';
+import { cn } from '@/lib/utils';
+import { Folder } from 'lucide-react';
+import { FC, useEffect, useState } from 'react';
 
 export const ProjectSection: FC = () => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
@@ -41,42 +39,53 @@ export const ProjectSection: FC = () => {
         </p>
       </div>
 
-      <div className="flex lg:flex-row md:flex-row flex-col 2xl:gap-[250px] lg:gap-[125px] lg:mt-[130px] mt-20 lg:justify-normal justify-center">
-        <div className="flex flex-col items-center justify-center gap-10">
-          {projects.map((project, idx) => {
-            const Icon = icons[project.icon];
-
-            return (
-              <div key={project.id} className="cursor-pointer">
-                <ProjectsCardBg
-                  style={{
-                    width: `${widths[idx]}%`,
-                    transition: "width 1.5s ease",
-                    borderTopRightRadius: idx === 0 ? "20px" : "20px",
-                    borderBottomRightRadius: idx === 0 ? "20px" : "20px",
-                  }}
+      <div className="flex flex-col items-center w-full">
+        <div className="flex items-center justify-around mt-20 w-full">
+          {projects.map((project, idx) => (
+            <div
+              key={project.id}
+              className="overflow-hidden"
+            >
+              <div className="flex items-center gap-2">
+                <div
+                  className={cn(
+                    'border border-black bg-black p-2 rounded-lg transition duration-1000',
+                    {
+                      'border-primary bg-gradient-to-t from-primary via-black to-black':
+                        activeIndex === idx,
+                    }
+                  )}
                 >
-                  <div className="flex items-center gap-3">
-                    <div
-                      className={cn("", {
-                        "project-border-icon-animation": activeIndex === idx,
-                      })}
-                    >
-                      <Icon name={project.icon} />
-                    </div>
-                    <p className="text-xl font-medium">{project.name}</p>
-                  </div>
-                </ProjectsCardBg>
+                  <Folder
+                    className={cn('text-[#A7A7A7] transition duration-300', {
+                      'text-white drop-shadow-[0_0_4px_#ccc]':
+                        activeIndex === idx,
+                    })}
+                  />
+                </div>
+                <p
+                  className={cn('text-[#A7A7A7] transition duration-300', {
+                    'text-white drop-shadow-[0_0_4px_#ccc]':
+                      activeIndex === idx,
+                  })}
+                >
+                  {project.name}
+                </p>
               </div>
-            );
-          })}
 
-          {/* <ButtonGradient type="outline" buttonClassName="px-7 py-4">
-            Посмотреть все
-          </ButtonGradient> */}
+              <div
+                className={cn(
+                  'bg-white h-1 rounded-full mt-2 drop-shadow-[0_0_4px_#ccc]'
+                )}
+                style={{
+                  width: `${widths[idx]}%`,
+                  transition: 'width 1.5s ease',
+                }}
+              />
+            </div>
+          ))}
         </div>
-
-        <div className="mt-32 md:mt-0 relative">
+        <div className="lg:my-32 md:mt-0 relative lg:-left-32">
           <CardStack
             activeIndex={activeIndex}
             widths={widths}

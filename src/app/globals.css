@@ -133,7 +133,7 @@
 }
 
 .gradient-border::before {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
   border-radius: 15px;
@@ -156,7 +156,7 @@
 }
 
 .gradient-border-main-color::before {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
   border-radius: 15px;
@@ -178,7 +178,7 @@
 }
 
 .gradient-border-white-to-main::before {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
   border-radius: 15px;
@@ -201,7 +201,7 @@
 }
 
 .gradient-border-service-card::before {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
   border-radius: 35px;
@@ -220,7 +220,7 @@
 .gradient-border-project-card {
   display: block;
   position: relative;
-  padding: 2px;
+  padding: 8px;
   max-width: 800px;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
@@ -228,21 +228,17 @@
 }
 
 .gradient-border-project-card::before {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
-  border-radius: 15px;
-  border: 2px solid transparent;
+  /* border-radius: 15px; */
+  border: 1px solid transparent;
   background: linear-gradient(-140deg, white, #262626) border-box;
   -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
   mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: destination-out;
   mask-composite: exclude;
 }
-
-/* .gradient-border-project-card:hover::before {
-  background: linear-gradient(-140deg, #a78bfa, #262626) border-box;
-} */
 
 .gradient-border-main-to-dark {
   display: block;
@@ -253,7 +249,7 @@
 }
 
 .gradient-border-main-to-dark::before {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
   border-radius: 20px;
