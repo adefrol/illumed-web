@@ -24,7 +24,7 @@ export const ProjectSection: FC = () => {
         setActiveIndex((prevIndex) => (prevIndex + 1) % projects.length);
         setWidths(Array(projects.length).fill(0));
       }
-    }, 100);
+    }, 300);
 
     return () => {
       clearInterval(interval);
@@ -45,7 +45,9 @@ export const ProjectSection: FC = () => {
           {projects.map((project, idx) => (
             <div
               key={project.id}
-              className="overflow-hidden"
+              className={cn('overflow-hidden transition duration-300', {
+                'scale-105': activeIndex === idx,
+              })}
             >
               <div className="flex items-center gap-2">
                 <div
@@ -74,14 +76,14 @@ export const ProjectSection: FC = () => {
                 </p>
               </div>
 
-              <div
+              <motion.div
                 className={cn(
                   'bg-white h-1 rounded-full mt-2 drop-shadow-[0_0_4px_#ccc]'
                 )}
-                style={{
-                  width: `${widths[idx]}%`,
-                  transition: 'width 1.5s ease',
-                }}
+                initial={{ width: 0 }}
+                animate={{ width: widths[idx] }}
+                transition={{ duration: 0.5 }}
+                key={idx}
               />
             </div>
           ))}
@@ -96,12 +98,14 @@ export const ProjectSection: FC = () => {
 
         <motion.div
           key={projects[activeIndex].id}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="lg:mt-80 md:mt-32 mt-0"
+          className="lg:mt-80 md:mt-32 sm:mt-0 -mt-40"
         >
-          <p className="text-[#a7a7a7] text-[32px]">{projects[activeIndex].description}</p>
+          <p className="text-[#a7a7a7] text-[32px]">
+            {projects[activeIndex].description}
+          </p>
         </motion.div>
       </div>
     </div>

@@ -35,7 +35,7 @@ export const ServiceSection: FC = () => {
                 </div>
                 <p
                   className={cn(
-                    "text-3xl font-medium min-h-[calc(120px-120*(100vw-1024px)/1920)]"
+                    "text-3xl font-medium lg:min-h-[calc(120px-120*(100vw-1024px)/1920)]"
                   )}
                 >
                   <span className="text-primary">{service.titlePink}</span>{" "}
@@ -43,7 +43,7 @@ export const ServiceSection: FC = () => {
                 </p>
                 <p
                   className={cn(
-                    "font-extralight text-lg min-h-[calc(200px+1*(100vw-1024px)/1920)]"
+                    "font-extralight text-lg lg:min-h-[calc(200px+1*(100vw-1024px)/1920)]"
                   )}
                 >
                   {service.description}
