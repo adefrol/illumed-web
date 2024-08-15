@@ -10,15 +10,15 @@ export const Footer = () => {
       <div className="grid lg:grid-cols-5">
         {footerList.map((list) => (
           <div key={list.id} className="">
-            <div className="py-10 p-20 pl-0">
-              <h2 className="text-3xl">{list.title}</h2>
+            <div className="md:py-10 md:p-20 py-5 pl-0">
+              <h2 className="md:text-3xl text-lg">{list.title}</h2>
             </div>
             <div className="flex flex-col gap-3">
               {list.links.map((link) => (
                 <Link
                   key={link.id}
                   href={link.href}
-                  className="text-2xl text-isecondary font-medium hover:text-white transition duration-300"
+                  className="lg:text-2xl text-sm text-isecondary font-medium hover:text-white transition duration-300"
                 >
                   {link.title}
                 </Link>
