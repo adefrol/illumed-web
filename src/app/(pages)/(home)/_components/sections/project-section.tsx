@@ -88,7 +88,7 @@ export const ProjectSection: FC = () => {
             </div>
           ))}
         </div>
-        <div className="lg:my-32 md:my-20 my-20 relative lg:-left-32 max-sm:left-5">
+        <div className="lg:my-32 md:my-20 my-20 relative lg:-left-32">
           <CardStack
             activeIndex={activeIndex}
             widths={widths}
